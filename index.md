@@ -3,6 +3,10 @@ Author:  Soonho Kong
 Date:    20 Apr 2018
 CSS: css/tufte.css
 CSS: css/latex.css
+HTML header:    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+                <script src="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js" integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc" crossorigin="anonymous"></script>
+
 
 Soonho Kong
 ===========
@@ -102,3 +106,6 @@ publications
 <!-- <blockquote>  -->
 <!-- </blockquote> -->
 <!-- </div> -->
+
+<!-- Render Math in the body -->
+<script>renderMathInElement(document.body);</script>
