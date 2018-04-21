@@ -7,21 +7,28 @@ CSS: css/latex.css
 Soonho Kong
 ===========
 
-Research scientist at [Toyota Research Institute][TRI] (email `<first>.<last>@tri.global`)
+Research scientist at [Toyota Research Institute][TRI]
 
 Research interests: automated reasoning and its applications toward robust cyber physical systems
 
+![email] `soonho.kong@tri.global`
+
+![github] [`github.com/soonho-tri`](https://github.com/soonho-tri)
+
+![location] `Cambridge, MA`
+
 [TRI]: https://www.tri.global
+[email]: ./img/email.svg "email" height=25px style="vertical-align: middle;"
+[github]: ./img/github.svg "github" height=25px style="vertical-align: middle;"
+[location]: ./img/location.svg "location" height=25px style="vertical-align: middle;"
+
 
 software
 --------
 
-[[Github][github]]
-
  - [dReal4][dreal4]: maintainer
  - [Drake][drake]: developer/platform-reviewer
  
-[github]: https://github.com/soonho-tri
 [dreal4]: https://github.com/dreal/dreal4
 [drake]: https://drake.mit.edu
 
@@ -90,3 +97,8 @@ publications
    
 [google-scholar]: https://scholar.google.com/citations?user=GLFFduAAAAAJ
 [dblp]: https://dblp.uni-trier.de/pers/hd/k/Kong:Soonho
+
+<!-- <div class="epigraph"> -->
+<!-- <blockquote>  -->
+<!-- </blockquote> -->
+<!-- </div> -->
