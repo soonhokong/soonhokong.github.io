@@ -574,8 +574,10 @@ FUNCTION {article}
   new.block
   format.authors "author" output.check
   new.block
+  "\\" write$
   crossref missing$
     { journal emphasize "journal" output.check
+      "\\" write$
       format.vol.num.pages output
       format.date "year" output.check
     }
@@ -700,8 +702,10 @@ FUNCTION {inproceedings}
   new.block
   format.authors "author" output.check
   new.block
+  "\\" write$
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
+      "\\" write$
       format.bvolume output
       format.number.series output
       format.pages output
