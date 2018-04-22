@@ -570,9 +570,9 @@ FUNCTION {format.incoll.inproc.crossref}
 
 FUNCTION {article}
 { output.bibitem
-  format.authors "author" output.check
-  new.block
   format.title "title" output.check
+  new.block
+  format.authors "author" output.check
   new.block
   crossref missing$
     { journal emphasize "journal" output.check
@@ -590,6 +590,7 @@ FUNCTION {article}
 
 FUNCTION {book}
 { output.bibitem
+  format.btitle "title" output.check
   author empty$
     { format.editors "author and editor" output.check }
     { format.authors output.nonnull
@@ -600,7 +601,6 @@ FUNCTION {book}
     }
   if$
   new.block
-  format.btitle "title" output.check
   crossref missing$
     { format.bvolume output
       new.block
@@ -622,13 +622,13 @@ FUNCTION {book}
 
 FUNCTION {booklet}
 { output.bibitem
-  format.authors output
-  new.block
   format.title "title" output.check
   howpublished address new.block.checkb
   howpublished output
   address output
   format.date output
+  new.block
+  format.authors output
   new.block
   note output
   fin.entry
@@ -636,16 +636,6 @@ FUNCTION {booklet}
 
 FUNCTION {inbook}
 { output.bibitem
-  author empty$
-    { format.editors "author and editor" output.check }
-    { format.authors output.nonnull
-      crossref missing$
-	{ "author and editor" editor either.or.check }
-	'skip$
-      if$
-    }
-  if$
-  new.block
   format.btitle "title" output.check
   crossref missing$
     { format.bvolume output
@@ -664,15 +654,25 @@ FUNCTION {inbook}
   format.edition output
   format.date "year" output.check
   new.block
+  author empty$
+    { format.editors "author and editor" output.check }
+    { format.authors output.nonnull
+      crossref missing$
+	{ "author and editor" editor either.or.check }
+	'skip$
+      if$
+    }
+  if$
+  new.block
   note output
   fin.entry
 }
 
 FUNCTION {incollection}
 { output.bibitem
-  format.authors "author" output.check
-  new.block
   format.title "title" output.check
+  new.block
+  format.authors "author" output.check
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
@@ -696,9 +696,9 @@ FUNCTION {incollection}
 
 FUNCTION {inproceedings}
 { output.bibitem
-  format.authors "author" output.check
-  new.block
   format.title "title" output.check
+  new.block
+  format.authors "author" output.check
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
@@ -732,17 +732,6 @@ FUNCTION {conference} { inproceedings }
 
 FUNCTION {manual}
 { output.bibitem
-  author empty$
-    { organization empty$
-	'skip$
-	{ organization output.nonnull
-	  address output
-	}
-      if$
-    }
-    { format.authors output.nonnull }
-  if$
-  new.block
   format.btitle "title" output.check
   author empty$
     { organization empty$
@@ -760,15 +749,26 @@ FUNCTION {manual}
   format.edition output
   format.date output
   new.block
+  author empty$
+    { organization empty$
+	'skip$
+	{ organization output.nonnull
+	  address output
+	}
+      if$
+    }
+    { format.authors output.nonnull }
+  if$
+  new.block
   note output
   fin.entry
 }
 
 FUNCTION {mastersthesis}
 { output.bibitem
-  format.authors "author" output.check
-  new.block
   format.title "title" output.check
+  new.block
+  format.authors "author" output.check
   new.block
   "Master's thesis" format.thesis.type output.nonnull
   school "school" output.check
@@ -781,12 +781,13 @@ FUNCTION {mastersthesis}
 
 FUNCTION {misc}
 { output.bibitem
-  format.authors output
-  title howpublished new.block.checkb
   format.title output
   howpublished new.block.checka
   howpublished output
   format.date output
+  new.block
+  format.authors output
+  title howpublished new.block.checkb
   new.block
   note output
   fin.entry
@@ -795,14 +796,14 @@ FUNCTION {misc}
 
 FUNCTION {phdthesis}
 { output.bibitem
-  format.authors "author" output.check
-  new.block
   format.btitle boldface "title" output.check
   new.block
   "PhD thesis" format.thesis.type output.nonnull
   school "school" output.check
   address output
   format.date "year" output.check
+  new.block
+  format.authors "author" output.check
   new.block
   note output
   fin.entry
@@ -845,9 +846,9 @@ FUNCTION {proceedings}
 
 FUNCTION {techreport}
 { output.bibitem
-  format.authors "author" output.check
-  new.block
   format.title "title" output.check
+  new.block
+  format.authors "author" output.check
   new.block
   format.tr.number output.nonnull
   institution "institution" output.check
@@ -860,9 +861,9 @@ FUNCTION {techreport}
 
 FUNCTION {unpublished}
 { output.bibitem
-  format.authors "author" output.check
-  new.block
   format.title "title" output.check
+  new.block
+  format.authors "author" output.check
   new.block
   note "note" output.check
   format.date output
