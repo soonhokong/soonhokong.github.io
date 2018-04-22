@@ -27,7 +27,7 @@ Research interests: automated reasoning and its applications toward robust cyber
 [location]: ./img/location.svg "location" height=25px style="vertical-align: middle;"
 
 
-software
+Software
 --------
 
  - [dReal4][dreal4]: maintainer
@@ -36,7 +36,7 @@ software
 [dreal4]: https://github.com/dreal/dreal4
 [drake]: https://drake.mit.edu
 
-publications
+Publications
 ------------
 
 [[Google Scholar][google-scholar]/[DBLP][dblp]]
@@ -48,7 +48,7 @@ publications
 {{bibtex.html}}
 
 
-talks
+Talks
 -----
 
  * 2016.04.28 **Efficient Delta-decision Procedure** @CMU
