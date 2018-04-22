@@ -51,37 +51,37 @@ publications
 talks
 -----
 
- * 2016.04.28 Efficient Delta-decision Procedure (Thesis Proposal), CMU. 
+ * 2016.04.28 **Efficient Delta-decision Procedure** @CMU
    [[Slides](./talks/20160428.pdf)]
- * 2016.04.06 *Automated Reasoning over the Reals*, Toyota Research Institute.
+ * 2016.04.06 **Automated Reasoning over the Reals** @Toyota Research Institute 
    [[Slides](./talks/20160406.pdf)]
- * 2016.03.16  *δ-Reachability Analysis for Hybrid Systems*, Microsoft Research Redmond. 
+ * 2016.03.16 **Delta-Reachability Analysis for Hybrid Systems** @Microsoft Research Redmond 
    [[Slides](./talks/20160316.pdf)]
- * 2016.01.07 *δ-Reachability Analysis for Hybrid Systems*, Microsoft Research Cambridge, UK. 
+ * 2016.01.07 **Delta-Reachability Analysis for Hybrid Systems** @Microsoft Research Cambridge, UK 
    [[Slides](./talks/20160316.pdf)]
- * 2015.05.18 *δ-Reachability Analysis for Hybrid Systems*, CMU SCS Speakers Club Talk.
+ * 2015.05.18 **Delta-Reachability Analysis for Hybrid Systems** @CMU SCS Speakers Club Talk 
    [[Slides](./talks/20150518.pdf)]
- * 2015.04.14 *dReach: δ-Reachability Analysis for Hybrid Systems*, [TACAS 2015][TACAS15], London, UK.
+ * 2015.04.14 **dReach: Delta-Reachability Analysis for Hybrid Systems** @[TACAS 2015][TACAS15], London, UK
    [[Slides](./talks/20150414.pdf)]
- * 2013.06.12 *dReal: An SMT solver for nonlinear theories of the reals*, [CADE 2013][CADE13], Lake Placid, New York, U.S. 
+ * 2013.06.12 **dReal: An SMT solver for nonlinear theories of the reals** @[CADE 2013][CADE13], Lake Placid, New York, U.S.
    [[Slides][20130612]]
- * 2012.09.21 *Compositional Sequentialization of Periodic Programs*, Programming Research Lab, Seoul National University
+ * 2012.09.21 **Compositional Sequentialization of Periodic Programs** @Programming Research Lab, Seoul National University
    [[Slides](./talks/20120921.pdf)]
- * 2012.08.09 *Verifying Concurrent Turing Machines*, SAS Unit Meeting, CMU SEI
+ * 2012.08.09 **Verifying Concurrent Turing Machines** @SAS Unit Meeting, CMU SEI
    [[Slides](./talks/20120809.pdf)]
- * 2011.11.09 *Abstract Interpretation*, CMU 15-414, Class Lecture
+ * 2011.11.09 **Abstract Interpretation** @CMU 15-414, Class Lecture
    [[Slides](./talks/20111109.pdf)]
- * 2011.10.10 *Model Checking*, CMU 15-414, Class Lecture
+ * 2011.10.10 **Model Checking** @CMU 15-414, Class Lecture
    [[Slides](./talks/20111010.pdf)]
- * 2011.03.23 *Basic Concepts of Abstract Interpretation*, CMU 15-817, Class Lecture
+ * 2011.03.23 **Basic Concepts of Abstract Interpretation** @CMU 15-817, Class Lecture
    [[Slides](./talks/20110323.pdf)]
- * 2011.01.26 *Data Flow Analysis*, CMU 15-817, Class Lecture
+ * 2011.01.26 **Data Flow Analysis** @CMU 15-817, Class Lecture
    [[Slides](./talks/20110126.pdf)]
- * 2010.01.18 *Deriving Invariants in Propositional Logic by Algorithmic Learning, Decision Procedures, and Predicate Abstraction*. [VMCAI 2010][VMCAI10], Madrid, Spain
+ * 2010.01.18 **Deriving Invariants in Propositional Logic by Algorithmic Learning, Decision Procedures, and Predicate Abstraction** @[VMCAI 2010][VMCAI10], Madrid, Spain
    [[Slides](./talks/20100118.pdf)/[photo](./talks/20100118.jpg)]
- * 2009.12.14 *Deriving Invariants in Propositional Logic by Algorithmic Learning, Decision Procedures, and Predicate Abstraction*, [APLAS 2009][APLAS09], Seoul, Korea (Poster Session)
+ * 2009.12.14 **Deriving Invariants in Propositional Logic by Algorithmic Learning, Decision Procedures, and Predicate Abstraction** @[APLAS 2009][APLAS09], Seoul, Korea (Poster Session)
    [[poster](./talks/20091214.pdf)/[photo](./talks/20091214_APLAS_poster.jpg)]
- * 2009.08.15 *PCC Framework for Program Generators*. [PCC 2009][PCC09], Los Angeles, U.S.A.
+ * 2009.08.15 **PCC Framework for Program Generators** @[PCC 2009][PCC09], Los Angeles, U.S.A
    [[Slides](./talks/20090815.pdf)]
 
 [TACAS15]: https://www.etaps.org/2015/tacas
