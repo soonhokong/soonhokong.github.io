@@ -95,9 +95,8 @@ Talks
 
 <div class="epigraph">
 <blockquote>
-"We can only see a short distance ahead, but we can see plenty there that needs to be done."
-
-― Alan Turing, Computing machinery and intelligence, Mind, Vol. 59, No. 236 (Oct., 1950).
+<p>"We can only see a short distance ahead, but we can see plenty there that needs to be done."</p>
+<footer>Alan Turing, <cite>Computing machinery and intelligence, Mind, Vol. 59, No. 236 (Oct., 1950).</cite></footer>
 </blockquote>
 </div>
 
