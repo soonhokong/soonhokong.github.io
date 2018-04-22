@@ -11,20 +11,17 @@ HTML header:    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@
 Soonho Kong
 ===========
 
-Research scientist at [Toyota Research Institute][TRI]
-
+Research scientist at [Toyota Research Institute][TRI]\
 Research interests: automated reasoning and its applications toward robust cyber physical systems
 
-![email] `soonho.kong@tri.global`
-
-![github] [`github.com/soonho-tri`](https://github.com/soonho-tri)
-
+![email] `soonho.kong@tri.global`\
+![github] [`github.com/soonho-tri`](https://github.com/soonho-tri)\
 ![location] `Cambridge, MA`
 
 [TRI]: https://www.tri.global
-[email]: ./img/email.svg "email" height=25px style="vertical-align: middle;"
-[github]: ./img/github.svg "github" height=25px style="vertical-align: middle;"
-[location]: ./img/location.svg "location" height=25px style="vertical-align: middle;"
+[email]: ./img/email.svg "email" width=25px height=25px style="vertical-align: middle;"
+[github]: ./img/github.svg "github" width=25px height=25px style="vertical-align: middle;"
+[location]: ./img/location.svg "location" width=25px height=25px style="vertical-align: middle;"
 
 
 Software
