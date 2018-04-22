@@ -1,0 +1,12 @@
+This talk consists of two parts. In first part I will briefly introduce the
+concept of proof-carrying code and its fundamental issues. In second part I will
+present a proof-carrying code framework for program-generators. The enabling
+technique is abstract parsing, a static string analysis technique, which is used
+as a component for generating and validating certificates. Our framework
+provides an efficient solution for certifying program-generators whose safety
+properties are expressed in terms of the grammar representing the generated
+program. The fixed-point solution of the analysis is generated and attached with
+the program-generator on the code producer side. The consumer receives the code
+with a fixed-point solution and validates that the received fixed point is
+indeed a fixed point of the received code.
+

@@ -1,0 +1,23 @@
+I am going to talk about the extension of abstract parsing which enables
+constraint-based analysis for generated programs. Current abstract parsing
+framework can be used to check the syntax of the generated programs. However, it
+doesn't provide anything about the semantics of the generated programs.
+
+The key idea is to fully utilize what parsing does for us. Instead of using
+parsing as a decision procedure, we start to use parsing as an AST builder by
+augmenting the parsing state with a corresponding AST. Then we follow
+abstraction steps as we did in GPCE'09[1]. The AST part is abstracted into
+constraints extracted from that AST. The analysis returns a set of parse stacks
+with corresponding constraints. We can do both syntactic and semantic analysis
+with the result.
+
+I will explain the key idea and abstraction steps with two examples,
+uninitialized local variable analysis and simple type inference for the
+generated programs. This is a joint work with Wontae Choi.
+
+Reference:
+Soonho Kong, Wontae Choi, Kwangkeun Yi. Abstract Parsing for
+Two-staged Languages with Concatenation. GPCE 2009: The 8th
+International Conference on Generative Programming and Component
+Engineering, Denver, Oct 4-5, 2009. Paper and slides are available at 
+http://ropas.snu.ac.kr/~soon

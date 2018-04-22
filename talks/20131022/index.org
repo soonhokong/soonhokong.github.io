@@ -1,0 +1,415 @@
+#+Title: Sat Modulo ODEs
+#+Author: [[http://www.cs.cmu.edu/~sicung][Sicun Gao]] / [[http://www.cs.cmu.edu/~soonhok][Soonho Kong]] / [[http://www.cs.cmu.edu/~emc][Edmund Clarke]]
+#+Date: 2013/10/22
+#+REVEAL_Title_Img: ./img/ode_logo.svg
+#+REVEAL_Title_Img_Width:  570px
+#+REVEAL_Title_Top_Margin: 200px
+#+REVEAL_Venue: FMCAD'13
+#+REVEAL_Webpage: http://dreal.cs.cmu.edu
+#+Email:
+#+Creator:
+#+REVEAL_TRANS: none
+#+REVEAL_THEME: sean
+#+REVEAL_HLEVEL: 3
+#+REVEAL_EXTRA_CSS:../reveal.js/lib/css/solarized_dark.css
+#+REVEAL_HEAD_PREAMBLE: <script type="text/javascript">MathJax.Hub.Config({"HTML-CSS": {scale: 100 }})</script>
+#+OPTIONS: toc:nil reveal_mathjax:t num:nil reveal_center:nil reveal_control:nil
+#+OPTIONS: reveal_rolling_links:nil
+#+OPTIONS: reveal_width:950 reveal_height:700
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+
+* Decision Problems over Real Numbers
+
+Given an arbitrary first-order $\varphi$ over
+
+$$\langle \mathbb{R}, \geq, \mathcal{F}\rangle$$
+
+decide the truth value of $\varphi$.
+
+* Decision Problems over Real Numbers
+
+Given an arbitrary first-order $\varphi$ over
+
+$$\langle \mathbb{R}, \geq, \mathcal{F}\rangle$$
+
+decide the truth value of $\varphi$.
+
+#+REVEAL_HTML: <br/><br/>
+
+With a rich enough $\mathcal{F}$, we would be able to:
+
+ - solve many control-engineering problems
+ - verify and synthesize safety-critical embedded systems
+
+* High-speed Parking
+* High-speed Parking
+#+REVEAL_HTML: <video data-autoplay width="640" height="480" controls><source src="video/parking.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+* High-speed Parking
+[[./img/car1.svg]]
+
+* High-speed Parking
+[[./img/car2.svg]]
+
+* High-speed Parking
+[[./img/car3.svg]]
+
+* High-speed Parking
+[[./img/car4.svg]]
+
+* High-speed Parking
+[[./img/car5.svg]]
+
+* High-speed Parking
+[[./img/car6.svg]]
+
+* High-speed Parking
+[[./img/car7.svg]]
+
+* High-speed Parking
+#+attr_html: :width 800px
+[[./img/car_diagram.png]]
+
+* Logic Encoding
+
+We can do this if we can solve the following SMT formula in real-time:
+
+\begin{eqnarray*}
+& &\mathsf{speedup}(\vec{x}_0)\wedge \left(\vec x_1 = \vec{x}_0 + \int_0^{t_1} \mathsf{speeding}(s)\mathrm{d}s\right)\bigwedge\\
+& &\mathsf{steer}(\vec x_1, \vec x_2)\wedge \left(\vec x_3 = \vec x_2 + \int_0^{t_2}\mathsf{turning}(s)\mathrm{d}s\right)\bigwedge\\
+& &\mathsf{brake}(\vec x_3, \vec x_4)\wedge \left(\vec x_5 = \vec x_4 + \int_0^{t_3}\mathsf{drifting}(s)\mathrm{d}s\right)\bigwedge \mathsf{parked}(\vec x_5)
+\end{eqnarray*}
+
+* $\text{}$
+#+REVEAL_HTML: <h2>
+*Isn't this problem too hard?*
+#+REVEAL_HTML: </h2>
+
+* Difficulty
+
+Suppose $\mathcal{F}$ is *$\{+,\times\}$*.
+
+$$\mathbb{R} \stackrel{?}{\models} \exists a \forall b \exists c\; (ax^2+bx + c > 0)$$
+
+ - Decidable [Tarski 1948].
+ -  Double-exponential lower-bound. Extensive research on practical solvers.
+
+* Difficulty
+Suppose $\mathcal{F}$ further contains *sine*:
+
+$$
+\mathbb{R} \stackrel{?}{\models} \exists x, y, z\; (\sin^2(\pi x) + \sin^2(\pi y)+
+\sin^2 (\pi z) = 0\bigwedge x^3 + y^3 = z^3 )
+$$
+
+ - $\Sigma_1$ case already undecidable.
+ - Partial algorithms are of extremely high complexity.
+ - Engineers would rather be left alone.
+
+* $\text{}$
+#+REVEAL_HTML: <h2>
+*The key is to change the decision problem.*
+#+REVEAL_HTML: </h2>
+
+* The Delta-Decision Problem (one version)
+Given $\varphi$ and $\delta\in \mathbb{Q}^+$, return one of the following:
+ - $\varphi$ is false.
+ - A weakening of the original formula, $\varphi^{-\delta}$, is true.
+
+#+REVEAL_HTML: <br/><br/><br/><br/>
+We now define what $\varphi^{-\delta}$ is.
+
+* $\delta$-Variants
+
+Any bounded $\mathcal{L}_{\mathcal{F}}$-sentence $\varphi$ can be
+written in the form
+
+$$Q_1^{[u_1, v_1]} x_n\cdots Q_n^{[u_n, v_n]}
+x_n\;\bigwedge (\bigvee t(\vec x)>0 \vee \bigvee t(\vec x)\geq 0)$$
+
+#+REVEAL_HTML: <div class="theorem">
+*Definition ($\delta$-weakening)*
+
+Let $\delta\in \mathbb{Q}^+\cup \{0\}$. The
+*$\delta$-weakening* $\varphi^{-\delta}$ of $\varphi$ is
+
+ $$Q_1^{[u_1,v_1]} x_1 \cdots Q_n^{[u_n,v_n]} x_n\;\bigwedge (\bigvee
+ t(\vec x)>-\delta \vee \bigvee t(\vec x)\geq -\delta)$$
+#+REVEAL_HTML: </div>
+
+* $\delta$-Decisions
+
+Let $\delta\in\mathbb{Q}^+$ be arbitrary.
+
+#+REVEAL_HTML: <div class="theorem">
+*Definition ($\delta$-decisions)*
+
+Decide, for any given bounded $\varphi$, whether
+
+ - $\varphi$ is false, or
+ - *$\varphi^{-\delta}$* is true.
+
+When the two cases overlap, either answer can be returned.
+#+REVEAL_HTML: </div>
+
+* $\delta$-Decidability
+
+Let $\mathcal{F}$ be an arbitrary collection of Type 2 computable
+functions.
+
+#+REVEAL_HTML: <div class="theorem">
+*Theorem [Gao et al. LICS'12]*
+
+ The $\delta$-decision problem over $\mathbb{R}_{\mathcal{F}}$ is
+decidable.
+#+REVEAL_HTML: </div>
+
+Type 2 computable functions:
+ - Polynomials
+ -  exp, sine, ...
+ -  L-continuous ODEs
+ -  PDEs, ...
+
+* $\delta$-Decisions
+
+There is a grey area that a $\delta$-complete algorithm can be wrong
+about.
+#+REVEAL_HTML: <br/><br/>
+
+#+attr_html: :height 280px
+[[./img/sat.svg]]
+#+attr_html: :height 280px
+[[./img/delta.svg]]
+
+* $\delta$ is good
+
+A system $\mathcal{S}$ is *safe* if some formula $\varphi$ is false.
+ - $\exists x_0 \exists t\exists x_t (\mathsf{Reach}(x_0, t, x_t) \wedge \mathsf{Unsafe}(x_t))$
+
+#+REVEAL_HTML: <br/>
+
+Now the interpretation of $\delta$-decisions is:
+ - False: $\mathcal{S}$ is *safe* (within bounds,
+   for BMC).
+ - $\delta$-True: $\mathcal{S}$ is *unsafe*, or *some
+   $\delta$-perturbation would make it unsafe*. You shouldn't rely on it anyway.
+
+* Complexity
+
+#+REVEAL_HTML: <div class="theorem">
+*Theorem*
+ - $\mathcal{F} = \{+,\times, \exp, \sin, ...\}$:
+   *$\Sigma^P_k$-complete*.
+ - $\mathcal{F} = \{\text{ODEs with }\mathsf{PTIME} \text{ deriv.}\}$:
+   *$\mathsf{PSPACE}$-complete*.
+#+REVEAL_HTML: </div>
+
+These are extremely low compared to the original ones.
+
+* $\text{}$
+#+REVEAL_HTML: <h2>
+*In theory, it may be possible to solve some. In practice?*
+#+REVEAL_HTML: </h2>
+
+* Formal Analysis of Numerical Algorithms
+
+ - We say an algorithm is *$\delta$-complete* if it solves
+   $\delta$-decision problem.
+ - Many numerically-driven procedures satisfy $\delta$-completeness
+   after *formal analysis* [Gao et al, IJCAR'12].
+
+* Interval Constraint Propagation
+
+ - Contract big initial interval boxes to small ones that cover solutions.
+ - If some constraints are satisfiable, then the interval relaxations always have overlapping boxes.
+
+#+attr_html: :width 380px
+[[./img/icp.svg]]
+
+* Interval Constraint Propagation
+
+  $$\exists x, y \in [0.5, 1.0] : y = \color{blue}{\sin(x)} \land y = \color{green}{\mathrm{atan}}(x)$$
+
+#+begin_html
+  <iframe src="http://dreal.cs.cmu.edu/presentation/20130612_2/icp_action_unsat.html" style="width:100%; height:470px;"></iframe>
+#+end_html
+
+* $\delta$-Completeness of ICP
+We gave conditions for a pruning operator to be *well-defined*,
+formalizing practical implementation strategies used in ICP.
+
+#+REVEAL_HTML: <div class="theorem">
+*Theorem [Gao et al. IJCAR'12]*
+
+DPLL(ICP) is $\delta$-complete *iff* its pruning operators are well-defined.
+#+REVEAL_HTML: </div>
+
+* $\text{}$
+#+REVEAL_HTML: <h2>
+*We now go into the details of ODE solving.*
+#+REVEAL_HTML: </h2>
+
+* Handling Differential Equations
+An ODE system
+
+$$ \frac{\mathrm{d}\vec{x}}{\mathrm{d}t} = \vec{f}(\vec{x}, t) $$
+
+when put in Picard–Lindelöf form:
+
+$$
+\vec{x}_t = \vec{x}_0 + \int_0^t f(\vec{x}, s) \mathrm{d}s
+$$
+
+is seen as a constraint between $\vec x_0, \vec x_t$, and $t$.
+
+* ODE Pruning
+
+Starting with big intervals for
+$$\vec{x}_t, \vec{x}_0, t$$
+use the ODE constraints to find smaller intervals for them.
+
+* Forward Pruning (on $X_t$)
+#+attr_html: :width 800px
+[[./img/X_t_1.svg]]
+
+#+REVEAL_HTML: <div style="font-size:200%">
+$$
+\Rightarrow
+$$
+#+REVEAL_HTML: </div>
+
+* Forward Pruning (on $X_t$)
+#+attr_html: :width 800px
+[[./img/X_t_2.svg]]
+#+REVEAL_HTML: <div style="font-size:200%">
+$$
+\Rightarrow
+$$
+#+REVEAL_HTML: </div>
+
+* Forward Pruning (on $X_t$)
+#+attr_html: :width 800px
+[[./img/X_t_3.svg]]
+#+REVEAL_HTML: <div style="font-size:200%">
+$$
+\Rightarrow
+$$
+#+REVEAL_HTML: </div>
+
+* Forward Pruning (on $X_t$)
+#+attr_html: :width 800px
+[[./img/X_t_4.svg]]
+#+REVEAL_HTML: <div style="font-size:200%">
+$$
+\Rightarrow
+$$
+#+REVEAL_HTML: </div>
+
+* Forward Pruning (on $X_t$)
+#+attr_html: :width 800px
+[[./img/X_t_5.svg]]
+#+REVEAL_HTML: <div style="font-size:200%">
+$$
+\Rightarrow
+$$
+#+REVEAL_HTML: </div>
+
+* Backward Pruning (on $X_0$)
+#+attr_html: :width 800px
+[[./img/X_0_1.svg]]
+#+REVEAL_HTML: <div style="font-size:200%">
+$$
+\Leftarrow
+$$
+#+REVEAL_HTML: </div>
+
+* Backward Pruning (on $X_0$)
+#+attr_html: :width 800px
+[[./img/X_0_2.svg]]
+#+REVEAL_HTML: <div style="font-size:200%">
+$$
+\Leftarrow
+$$
+#+REVEAL_HTML: </div>
+
+* Backward Pruning (on $X_0$)
+#+attr_html: :width 800px
+[[./img/X_0_3.svg]]
+#+REVEAL_HTML: <div style="font-size:200%">
+$$
+\Leftarrow
+$$
+#+REVEAL_HTML: </div>
+
+* Time Pruning (on $T$)
+#+attr_html: :width 800px
+[[./img/X_time_1.svg]]
+
+* Time Pruning (on $T$)
+#+attr_html: :width 800px
+[[./img/X_time_2.svg]]
+
+* Time Pruning (on $T$)
+#+attr_html: :width 800px
+[[./img/X_time_3.svg]]
+
+* Pruning with Invariant
+#+attr_html: :width 800px
+[[./img/inv_1.svg]]
+* Pruning with Invariant
+#+attr_html: :width 800px
+[[./img/inv_2.svg]]
+
+* Pruning with Invariant
+#+attr_html: :width 800px
+[[./img/inv_3.svg]]
+
+* Pruning with Invariant
+#+attr_html: :width 800px
+[[./img/inv_4.svg]]
+
+* Tool
+ - Open-source at http://dreal.cs.cmu.edu
+ - Nonlinear ODEs, and of course, polynomials, transcendental
+   functions, etc.
+ - Formulas with hundreds of nonlinear ODEs have been solved.
+
+  [[./img/dReal_snap.png]]
+
+* Experiments
+
+#+attr_html: :width 900px
+[[./img/cardiac.png]]
+
+* Experiments
+
+#+begin_html
+<iframe src="http://dreal.cs.cmu.edu/presentation/20130612/cardiac.smt2.html"
+style="width:800px; height:480px;
+margin-left:auto; margin-right:auto;
+padding:0"></iframe>
+#+end_html
+
+* Experiments
+
+#+attr_html: :width 900px
+[[./img/prostate.png]]
+
+#+REVEAL_HTML: </td></tr></table>
+
+* Experiments
+#+attr_html: :height 550px
+[[./img/exp.png]]
+
+* Conclusion
+#+REVEAL_HTML: <video data-autoplay width="400" height="300" controls><source src="video/parking.mp4" type="video/mp4">Your browser does not support the video tag.</video><br/><br>
+
+* Conclusion
+
+#+attr_html: :width 400px
+[[./img/car_still.png]]
+
+#+REVEAL_HTML: <h2>
+*This is not much harder than SAT solving.*
+#+REVEAL_HTML: </h2>

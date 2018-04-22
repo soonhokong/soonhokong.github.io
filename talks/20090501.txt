@@ -1,0 +1,13 @@
+I will present abstract parsing for two-staged language. In multi-staged
+programming, program generates another program. How can we make sure that the
+generated program is syntactically correct? To answer this question, we design
+minimal two-staged language and apply abstract parsing technique[1] in abstract
+interpretation framework. Our analysis is parameterized with abstract
+domain. One can choose the abstract domain as long as it satisfies the condition
+we provide. We also present a concrete instance of abstract domain - abstract
+parsing stack with k-cutting.
+
+Reference: [1] Kyung-Goo Doh, Hyunha Kim and David Schmidt. Abstract parsing:
+static analysis of dynamically generated string output using LR-parsing
+technology. SAS 2009: The 16th International Static Analysis Symposium, LA,
+August 7-9, 2009. (to appear)

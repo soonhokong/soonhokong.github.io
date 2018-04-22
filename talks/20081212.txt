@@ -1,0 +1,11 @@
+Programs that interact with environments such as the file system and database
+are a classical challenge for automated software testing. A common approach to
+handling this problem is to insert an abstraction layer between the application
+and the environment However, even with a well-defined abstraction layer, the
+burden on the software developer or tester is still high: they have to
+understand the subtleties of the environment to craft a meaningful set of test
+cases. In this talk, I will present parameterized models for the file system and
+database that can be used in conjunction with Pex, an automated test generation
+tool using dynamic symbolic execution. This is the work I've done at MSR this
+summer.
+

@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>(Lean Theorem Prover)</title>
+<meta name="author" content="((link (:type http :path //www.cs.cmu.edu/~soonhok :raw-link http://www.cs.cmu.edu/~soonhok :application nil :search-option nil :begin 1 :end 49 :contents-begin 35 :contents-end 46 :post-blank 1 :parent #0) Soonho Kong) /  (link (:type https :path //leodemoura.github.io :raw-link https://leodemoura.github.io :application nil :search-option nil :begin 51 :end 102 :contents-begin 83 :contents-end 100 :post-blank 0 :parent #0) Leonardo de Moura))"/>
+<link rel="stylesheet" href="../reveal.js/css/reveal.min.css"/>
+<link rel="stylesheet" href="../reveal.js/css/theme/one-mozilla.css" id="theme"/>
+<link rel="stylesheet" href="./../reveal.js/lib/css/solarized_dark.css"/>
+<link rel="stylesheet" href="../reveal.js/css/print/pdf.css" type="text/css" media="print"/>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript">MathJax.Hub.Config({"HTML-CSS": {scale: 80 }})</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<div id="org_reveal_title_top_margin" style="height: 100px"></div>
+<h1><img src=./img/lean_logo.svg width=650px></h1>
+<h3><small><a href="http://www.cs.cmu.edu/~soonhok">Soonho Kong</a> / <a href="https://leodemoura.github.io">Leonardo de Moura</a></small></h3>
+<p><small>2013/10/04, Microsoft Research, End of Internship Talk</small><br/>
+<small><a href="http://leanprover.net">http://leanprover.net</a></small>
+</p>
+</section>
+
+<section id="sec-1" >
+
+<h2>Design Goal</h2>
+<ul class="org-ul">
+<li>Rich Logic : <b>Dependent Types</b> + Classical Logic
+</li>
+</ul>
+<p>
+Expressive enough to represent terms, types, and proofs.
+</p>
+
+\begin{aligned}
+expr := & \;   \mathrm{Var} \; \mathbb{N}\\
+        & | \  \mathrm{Const} \; id\\
+        & | \  \mathrm{App} [expr]\\
+        & | \  \lambda \, id  :  expr, \; expr\\
+        & | \  \Pi \; id : expr, \; expr\\
+        & | \  \mathrm{Type} \; universe\\
+        & | \  \mathrm{Eq} \; expr \; expr\\
+        & | \  \mathrm{Let} \; id : expr = expr \; \mathrm{in} \; expr\\
+        & | \  \mathrm{Metavar} \; id  \; meta\_ctx \\
+        & | \  \mathrm{Match} \dots \mathrm{Cases} \dots
+\end{aligned}
+</section>
+<section id="sec-2" >
+
+<h2>Design Goal</h2>
+<ul class="org-ul">
+<li>Rich Logic : Dependent Types + <b>Classical Logic</b>
+</li>
+</ul>
+<p>
+Enable automation, support existing problems (e.g., SMT2.0)
+</p>
+
+<pre><code>Axiom MP {a b : Bool} (H1 : a ⇒ b) (H2 : a) : b
+Axiom Discharge {a b : Bool} (H : a → b) : a ⇒ b
+Axiom Refl {A : Type U} (a : A) : a = a
+Axiom Subst {A : Type U} {a b : A} (P : A → Bool) (H1 : P a) (H2 : a = b) : P b
+Axiom Eta {A : Type U} {B : A → Type U} (f : Π x : A, B x) : (λ x : A, f x) = f
+Axiom ImpAntisym {a b : Bool} (H1 : a ⇒ b) (H2 : b ⇒ a) : a = b
+
+Axiom Case : Π (P : Bool → Bool) (H1 : P ⊤) (H2 : P ⊥) (a : Bool), P a
+</code></pre>
+</section>
+<section id="sec-3" >
+
+<h2>Design Goal</h2>
+<ul class="org-ul">
+<li>Rich Logic: <b>Dependent Types</b> + <b>Classical Logic</b>
+</li>
+<li><b>Automation</b>
+</li>
+</ul>
+<pre><code>// why can't we have placeholders?
+Theorem T (a b : T') : big_and_complex_theorem :=
+ let L_1   : Lemma_1   := Proof_1
+     ...
+     L_i   : Lemma_i   := Proof_i
+     L_i+1 : Lemma_i+1 := _
+     ...
+     L_n   : Lemma_n   := _
+ in
+     _
+</code></pre>
+</section>
+<section id="sec-4" >
+
+<h2>Design Goal</h2>
+<ul class="org-ul">
+<li>Rich Logic: <b>Dependent Types</b> + <b>Classical Logic</b>
+</li>
+<li><b>Automation</b>
+</li>
+<li>Provide flexible ways to <b>influence</b> the prover
+<ul class="org-ul">
+<li>Domain Knowledge
+</li>
+<li>Tactics, Rewriters, Solvers
+</li>
+<li><b>Compositional</b> approach vs. monolithic approach
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-5" >
+
+<h2>Design Goal</h2>
+<ul class="org-ul">
+<li>Rich Logic: <b>Dependent Types</b> + <b>Classical Logic</b>
+</li>
+<li><b>Automation</b>
+</li>
+<li>Provide flexible ways to <b>influence</b> the prover
+</li>
+<li><b>Freedom to trust</b>
+<ul class="org-ul">
+<li>can be draconian, or rely on your own beliefs
+</li>
+<li>performance vs. trust
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-6" >
+
+<h2>Design Goal</h2>
+<ul class="org-ul">
+<li>Rich Logic: <b>Dependent Types</b> + <b>Classical Logic</b>
+</li>
+<li><b>Automation</b>
+</li>
+<li>Provide flexible ways to <b>influence</b> the prover
+</li>
+<li><b>Freedom to trust</b>
+</li>
+<li><b>Middleware</b> between interactive and automated tools
+<ul class="org-ul">
+<li>"<b>LLVM</b> for automated reasoning"
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-7" >
+
+<h2>Design Goal</h2>
+<ul class="org-ul">
+<li>Rich Logic: <b>Dependent Types</b> + <b>Classical Logic</b>
+</li>
+<li><b>Automation</b>
+</li>
+<li>Provide flexible ways to <b>influence</b> the prover
+</li>
+<li><b>Freedom to trust</b>
+</li>
+<li><b>Middleware</b> between interactive and automated tools
+</li>
+<li><b>Performance</b>
+<ul class="org-ul">
+<li>Language of choice: C++11
+</li>
+<li>Consider parallelism from the beginning
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-8" >
+
+<h2>Design of Lean: <b>Big Picture</b></h2>
+<img src="./img/design.svg" alt="design.svg" />
+</section>
+<section id="sec-9" >
+
+<h2>Design of Lean: <b>Environment</b></h2>
+<img src="./img/design_env.svg" alt="design_env.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>Collection of objects:
+<ul class="org-ul">
+<li>Axiom (= Variable): Name + Type
+</li>
+<li>Theorem (= Definition): Name + Type + Value
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>Axiom H : 1 > 0.
+Theorem pierce (a b : Bool) : ((a ⇒ b) ⇒ a) ⇒ a :=
+ Discharge ((a ⇒ b) ⇒ a) a (λ H : (a ⇒ b) ⇒ a, DisjCases a (¬ a) a (EM a)
+                              (λ H_a : a, H_a)
+                              (λ H_na : ¬ a, NotImp1 a b (MT (a ⇒ b) a H H_na)))
+</code></pre>
+</section>
+<section id="sec-10" >
+
+<h2>Design of Lean: <b>Type Checker</b></h2>
+<img src="./img/design_tc.svg" alt="design_tc.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>Proof checking = Type checking
+</li>
+</ul>
+
+<pre><code>Theorem pierce (a b : Bool) : ((a ⇒ b) ⇒ a) ⇒ a :=
+ Discharge ((a ⇒ b) ⇒ a) a (λ H : (a ⇒ b) ⇒ a, DisjCases a a (¬ a) (EM a)
+                              (λ H_a : a, H_a)
+                              (λ H_na : ¬ a, NotImp1 a b (MT (a ⇒ b) a H H_na))).
+
+Error (line: 8, pos: 59) function expected at
+    MT (a ⇒ b) a H H_na
+</code></pre>
+
+<ul class="org-ul">
+<li>Not possible to make an environment <b>inconsistent</b> by adding theorems/definitions
+</li>
+<li>Reduce the size of <b>trusted kernel</b>
+</li>
+</ul>
+</section>
+<section id="sec-11" >
+
+<h2>Design of Lean: <b>Trusted Kernel</b></h2>
+<img src="./img/design_kernel.svg" alt="design_kernel.svg" />
+<br/>
+
+<ul class="org-ul">
+<li><b>5k</b> line of C++ code (out of 35k)
+<ul class="org-ul">
+<li><i>expr</i>, <i>context</i>, <i>env</i>, <i>normalizer</i>, <i>type checker</i>, etc
+</li>
+<li><b>soundness</b> of Lean relies on kernel
+</li>
+<li>can be implemented in different languages (e.g., F#, Ocaml,
+Scala) using different libraries to <b>increase credibility</b>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-12" >
+
+<h2>Design of Lean: <b>Trusted Kernel</b></h2>
+<img src="./img/design_kernel.svg" alt="design_kernel.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>Semantic attachment
+<ul class="org-ul">
+<li>provide <b>computation</b>
+</li>
+<li>can always recover by <b>defining</b> them
+</li>
+<li>Performance vs. Trust
+</li>
+</ul>
+</li>
+</ul>
+
+<pre><code>// Church Encoding, Unary Addition
+plus ≡ λm.λn.λf.λx. m f (n f x)
+
+// GMP(GNU Multi-Precision Library)
+plus ≡ λm.λn.GMP_ADD_N(m, n)
+</code></pre>
+</section>
+<section id="sec-13" >
+
+<h2>Design of Lean: <b>Frontend</b></h2>
+<img src="./img/design_frontend.svg" alt="design_frontend.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>Input can be <b>partially</b> specified:
+</li>
+</ul>
+<pre><code>// User may ask Lean to fill the whole proof
+Theorem pierce (a b : Bool) : ((a ⇒ b) ⇒ a) ⇒ a := _
+
+// Some hints about the proof but still incomplete.
+Theorem pierce (a b : Bool) : ((a ⇒ b) ⇒ a) ⇒ a :=
+ Discharge _ _ (λ H, DisjCases _ _ _ _ _ _).
+
+// Encode domain knowledge as lemmae and ask Lean to use them
+Theorem T (a b : T') : big_and_complex_theorem :=
+ let L_1   : Lemma_1 := Proof_1
+     ...
+     L_i   : Lemma_i := Proof_i
+     L_i+1 : Lemma_i := _
+     ...
+     L_n   : Lemma_n := _
+ in
+     _
+</code></pre>
+
+<aside class="notes">
+<p>
+Enter speaker notes here.
+</p>
+</aside>
+</section>
+<section id="sec-14" >
+
+<h2>Design of Lean: <b>Frontend</b></h2>
+<img src="./img/design_frontend.svg" alt="design_frontend.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>Input can be <b>partially</b> specified:
+</li>
+</ul>
+
+<pre><code>// a,b are implicit arguments.
+Axiom Discharge {a b : Bool} (H : a → b) : a ⇒ b
+// omit implicit arguments.
+Theorem pierce (a b : Bool) : ((a ⇒ b) ⇒ a) ⇒ a :=
+ Discharge (λ H, DisjCases (EM a)
+                              (λ H_a, H_a)
+                              (λ H_na, NotImp1 (MT H H_na))).
+
+// Frontend reveals placeholders
+Theorem pierce (a b : Bool) : ((a ⇒ b) ⇒ a) ⇒ a :=
+ Discharge _ _ (λ H, DisjCases _ _ _ (EM a)
+                              (λ H_a : _ , H_a)
+                              (λ H_na : _ , NotImp1 _ _ (MT _ _ H H_na))).
+
+// Lean solves the problem
+Theorem pierce (a b : Bool) : ((a ⇒ b) ⇒ a) ⇒ a :=
+ Discharge ((a ⇒ b) ⇒ a) a (λ H : (a ⇒ b) ⇒ a, DisjCases a (¬ a) a (EM a)
+                              (λ H_a : a, H_a)
+                              (λ H_na : ¬ a, NotImp1 a b (MT (a ⇒ b) a H H_na))).
+</code></pre>
+</section>
+<section id="sec-15" >
+
+<h2>Design of Lean: <b>Frontend</b></h2>
+<img src="./img/design_frontend.svg" alt="design_frontend.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>Input can be <b>partially</b> specified:
+</li>
+</ul>
+
+<pre><code>// Example with overloading
+Variable x y : Real
+Check x + y // + is overloaded for ℝ and ℕ
+
+// 1. Frontend reveals placeholder
+Variable x y : Real
+Check (?mOP x y)
+// 2. and extract constraints
+?mOP : ?mA → ?mB → ?mC
+?mA ≈ ℝ
+?mB ≈ ℝ
+?mOP in {Real::Add, Nat::Add}
+Real::Add : ℝ -> ℝ -> ℝ
+Nat::Add : ℕ -> ℕ -> ℕ
+
+// Solution
+Variable x y : Real
+Check (Real::Add x y)
+</code></pre>
+</section>
+<section id="sec-16" >
+
+<h2>Design of Lean: <b>Frontend</b></h2>
+<img src="./img/design_frontend.svg" alt="design_frontend.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>To fill the placeholders, a frontend generates <b>constraints</b>:
+\begin{aligned}
+& ctx \vdash t \approx s                  & (\mbox{t and \(s\) can be unified})\\
+& ctx \vdash ?m \; \mathrm{in} \; \{t_1, \dots, t_n\} & (\mbox{choice})\\
+& ctx \vdash ?m : t                         & (\mbox{?m is an expr of type t})
+\end{aligned}
+</li>
+</ul>
+
+<ul class="org-ul">
+<li class="fragment fade-in">To solve them, a frontend calls <b>elaborator</b> running:
+<ul class="org-ul">
+<li>Higher-order Unification Algorithm (for \(ctx \vdash t \approx s\))
+</li>
+<li>Search Engine (for \(ctx \vdash ?m \; \mathrm{in} \; \{t_1, \dots, t_n\}\))
+</li>
+<li>Synthesizers (for \(ctx \vdash ?m : t\))
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-17" >
+
+<h2>Design of Lean: <b>Frontend</b></h2>
+<img src="./img/design_frontend.svg" alt="design_frontend.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>Frontend = Constraint Generator
+</li>
+<li>There can be <b>Multiple</b> frontends:
+<ul class="org-ul">
+<li>Lean (done)
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>$ ./shell/lean
+Lean (version 0.1)
+Type Ctrl-D to exit or 'Help.' for help.
+# Variable a : Bool.
+  Assumed: a
+# Variable b : Bool.
+  Assumed: b
+# Variable H : a /\ b.
+  Assumed: H
+# Theorem pierce (a b : Bool) : ((a ⇒ b) ⇒ a) ⇒ a := _
+    Discharge (λ H, DisjCases (EM a)
+                              (λ H_a, H_a)
+                              (λ H_na, NotImp1 (MT H H_na))).
+  Proved: pierce
+</code></pre>
+</section>
+<section id="sec-18" >
+
+<h2>Design of Lean: <b>Frontend</b></h2>
+<img src="./img/design_frontend.svg" alt="design_frontend.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>Frontend = Constraint Generator
+</li>
+<li>There can be <b>Multiple</b> frontends:
+<ul class="org-ul">
+<li>Lean (done)
+</li>
+<li>SMT2.0 (work-in-progress)
+</li>
+</ul>
+</li>
+</ul>
+
+<pre><code>(declare-fun a () Int)
+(declare-fun b () Int)
+(assert (> a 0))
+(assert (< b a))
+(check-sat)
+</code></pre>
+
+<pre><code>Variable a : Int
+Variable b : Int
+Axiom H1 : a > 0
+Axiom H2 : b < a
+Theorem U : false := _
+</code></pre>
+</section>
+<section id="sec-19" >
+
+<h2>Design of Lean: <b>Frontend</b></h2>
+<img src="./img/design_frontend.svg" alt="design_frontend.svg" />
+<br/>
+
+<ul class="org-ul">
+<li>Frontend = Constraint Generator
+</li>
+<li>There can be <b>Multiple</b> frontends:
+<ul class="org-ul">
+<li>Lean (done)
+</li>
+<li>SMT2.0 (work-in-progress)
+</li>
+<li>Theorem provers
+</li>
+<li>Verification tools
+</li>
+<li>Synthesis tools
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-20" >
+
+<h2>Design of Lean: <b>Elaborator</b></h2>
+<img src="./img/design_elaborator.svg" alt="design_elaborator.svg" />
+
+<ul class="org-ul">
+<li class="fragment fade-in">Solve the followings using <b>higher-order unification</b> and
+    <b>non-chronological backtracking</b>:
+\begin{aligned}
+& ctx \vdash t \approx s                          & (\mbox{t and \(s\) can be unified})\\
+& ctx \vdash ?m \; \mathrm{in} \; \{t_1, \dots, t_n\} & (\mbox{choice})\\
+\end{aligned}
+</li>
+
+<li class="fragment fade-in">Call <b>synthesizer</b> to solve:
+\begin{aligned}
+& ctx \vdash ?m : t                         & (\mbox{?m is an expr of type t})
+\end{aligned}
+
+<p>
+Ex: \({ASSOC}, \mathrm{COMM}, \mathrm{ID}, a : \mathbb{N} \vdash ?m : 0 + (a + 0) = a\)
+</p>
+</li>
+</ul>
+</section>
+<section id="sec-21" >
+
+<h2>Design of Lean: <b>Synthesizer</b></h2>
+<img src="./img/design_synth.svg" alt="design_synth.svg" />
+
+\begin{aligned}
+& ctx \vdash ?m : t
+\end{aligned}
+
+<p>
+Find an
+ <b>expr</b> of type \(t\) under context \(ctx\)
+</p>
+
+<ul class="org-ul">
+<li class="fragment fade-in">(possibly) Use <b>rewriters</b>, <b>tactics</b>, and <b>solvers</b>
+</li>
+<li class="fragment fade-in">To take a <b>compositional</b> approach, provide
+<ul class="org-ul">
+<li><b>Interface</b> for a basic building block
+</li>
+<li><b>Combinators</b> to construct complex objects from
+basic blocks
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-22" >
+
+<h2>Design of Lean: <b>Rewriter</b></h2>
+<p>
+Example:
+\(\quad \mathrm{ASSOC}, \mathrm{COMM}, \mathrm{ID}, a : \mathbb{N} \vdash ?m : 0 + (a + 0) = a\)
+</p>
+
+<p>
+Theorem Rewriter: Basic building block
+</p>
+
+<img src="./img/rw_1.svg" alt="rw_1.svg" />
+</section>
+<section id="sec-23" >
+
+<h2>Design of Lean: <b>Rewriter</b></h2>
+<p>
+Example:
+\(\quad \mathrm{ASSOC}, \mathrm{COMM}, \mathrm{ID}, a : \mathbb{N} \vdash ?m : 0 + (a + 0) = a\)
+</p>
+
+<p>
+Theorem Rewriter: Basic building block
+</p>
+
+<img src="./img/rw_1.svg" alt="rw_1.svg" />
+
+<p>
+OrElse, Try, Repeat Rewriter: Combinators
+</p>
+
+<img src="./img/rw_4.svg" alt="rw_4.svg" />
+</section>
+<section id="sec-24" >
+
+<h2>Design of Lean: <b>Rewriter</b></h2>
+<p>
+Example:
+\(\quad \mathrm{ASSOC}, \mathrm{COMM}, \mathrm{ID}, a : \mathbb{N} \vdash ?m : 0 + (a + 0) = a\)
+</p>
+
+<p>
+Theorem Rewriter: Basic building block
+</p>
+
+<img src="./img/rw_1.svg" alt="rw_1.svg" />
+
+<p>
+OrElse, Try, Repeat Rewriter: Combinators
+</p>
+
+<img src="./img/rw_4.svg" alt="rw_4.svg" />
+
+<p>
+\[ 0 + (a + 0)  \xrightarrow{ASSOC}
+     (0 + a) + 0  \xrightarrow{ID}
+     0 + a        \xrightarrow{COMM}
+     a + 0        \xrightarrow{ID}
+     a\]
+</p>
+</section>
+<section id="sec-25" >
+
+<h2>Design of Lean: <b>Outcome #1</b></h2>
+<img src="./img/elab_case1.svg" alt="elab_case1.svg" />
+
+<ul class="org-ul">
+<li>The elaborator <b>succeeds</b> and fill all the holes
+</li>
+<li>The Lean Kernel <b>accepts</b> the elaborated object without holes
+</li>
+</ul>
+</section>
+<section id="sec-26" >
+
+<h2>Design of Lean: <b>Outcome #2</b></h2>
+<img src="./img/elab_case2.svg" alt="elab_case2.svg" />
+
+<ul class="org-ul">
+<li>The elaborator <b>succeeds</b> and fill all the holes
+</li>
+<li>But the Lean Kernel <b>rejects</b> the elaborated object
+<ul class="org-ul">
+<li>Some of the components may have <b>bugs</b>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-27" >
+
+<h2>Design of Lean: <b>Outcome #3</b></h2>
+<img src="./img/elab_case3.svg" alt="elab_case3.svg" />
+
+<ul class="org-ul">
+<li>The elaborator <b>fails</b> to fill the holes,
+</li>
+<li>Produce a <b>new environment</b> as a counterexample
+<ul class="org-ul">
+<li>provides definitions and theorems for all user defined variables
+and axioms
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-28" >
+
+<h2>Design of Lean: <b>Outcome #3</b></h2>
+<img src="./img/elab_case3.svg" alt="elab_case3.svg" />
+
+<ul class="org-ul">
+<li>User Input
+</li>
+</ul>
+<pre><code>Variable a : Nat
+Axiom H : a > 0
+Theorem T : a >= 2 := _
+</code></pre>
+<ul class="org-ul">
+<li>Counter-example
+</li>
+</ul>
+<pre><code>Definition a : Nat := 1
+Theorem H : a > 0 := Trivial
+Theorem T : not a >= 2 := Trivial
+</code></pre>
+</section>
+<section id="sec-29" >
+
+<h2>Design of Lean: <b>Outcome #4</b></h2>
+<img src="./img/elab_case4.svg" alt="elab_case4.svg" />
+
+<ul class="org-ul">
+<li>The elaborator <b>fails</b> because of its <b>own limitation</b>
+</li>
+<li>Produce a <b>trace</b> explaining why a particular hole could not be filled
+<ul class="org-ul">
+<li>Useful for <b>refinement</b>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section id="sec-30" >
+
+<h2>Current Status of <b>Lean</b></h2>
+<img src="./img/status.svg" alt="status.svg" />
+</section>
+<section id="sec-31" >
+
+<h2>Acknowledgment</h2>
+<ul class="org-ul">
+<li><a href="http://www.andrew.cmu.edu/user/avigad">Jeremy Avigad</a> <b>@</b> Carnegie Mellon University
+</li>
+<li><a href="http://www.cl.cam.ac.uk/~gp351">Grant Passmore</a> <b>@</b> University of Edinburgh
+</li>
+<li><a href="http://www.andrew.cmu.edu/user/croux">Cody Roux</a> <b>@</b> Carnegie Mellon University
+</li>
+<li><a href="http://research.microsoft.com/en-us/people/nswamy">Nikhil Swamy</a> <b>@</b> Microsoft Research
+</li>
+</ul>
+</section>
+<section id="sec-32" >
+
+<h2>Thank you</h2>
+<p>
+Any Questions?
+</p>
+</section>
+<section id="sec-33" >
+
+<h2>One more thing&#x2026;</h2>
+<p>
+<a href="./extra.html">How we develop Lean</a>
+</p>
+</section>
+</div>
+</div>
+<script src="../reveal.js/lib/js/head.min.js"></script>
+<script src="../reveal.js/js/reveal.min.js"></script>
+<script>
+
+                        // Full list of configuration options available here:
+                        // https://github.com/hakimel/reveal.js#configuration
+                        Reveal.initialize({
+                                controls: false,
+                                progress: true,
+                                history: true,
+                                center: false,
+                                rollingLinks: false,
+                                keyboard: true,
+                                overview: true,
+                                width: 1000, // slide width
+                                height: 700, // slide height
+                                margin: 0.10, // slide margin
+                                minScale: 0.50, // slide minimum scaling factor
+                                maxScale: 2.50, // slide maximum scaling factor
+
+
+                                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+                                transitionSpeed: 'default',
+
+                                // Optional libraries used to extend on reveal.js
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                                        // { src: '../reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                                        // { src: '../reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                                ]
+                        });
+</script>
+</body>
+</html>

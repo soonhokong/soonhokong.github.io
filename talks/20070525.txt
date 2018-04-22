@@ -1,0 +1,15 @@
+I'm going to talk about the paper, "Basic Concepts of Abstract
+Interpretation"(by P. Cousot and R. Cousot).
+
+This paper introduces basic concepts of abstract interpretation
+framework. Program is formalized as a transition system and its concrete
+semantics is defined as partial trace semantics. Then the authors of the paper
+develop the three different abstract semantics of partial trace semantics -
+a. reflexive transitive closure semantics, b. reachability semantics,
+c. interval semantics. For each abstract semantics, they develop the Galois
+connection between concrete semantics and show that each can be expressed in
+fixpoint form.
+
+Concepts of widening and narrowing are provided with examples. Then, composition
+of three abstractions and hierarchy of four semantics are explained.
+

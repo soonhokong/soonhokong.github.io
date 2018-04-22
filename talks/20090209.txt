@@ -1,0 +1,6 @@
+Wontae Choi and I have investigated how to apply the idea of abstract parsing
+into multi-staged languages. In this talk, I'll present the progress we've made
+so far. At first, I'll introduce syntax and semantics of the two-staged language
+that we're using. Using this language, I'll show how we could understand both
+concrete and abstract parsing within abstract interpretation framework.
+

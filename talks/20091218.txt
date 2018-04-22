@@ -1,0 +1,7 @@
+Cristina, Yungbum, Prof. Wang, Prof. Yi, and I are extending our
+previous invariant generation technique (VMCAI'10) to find quantified
+invariants. We found a way to answer membership and equivalence
+queries using a restricted template of an invariant. At present, we
+are implementing the system and testing it with some examples from the
+literatures. I am going to explain the current progress and problems
+we have.

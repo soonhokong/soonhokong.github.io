@@ -1,0 +1,11 @@
+I will present cost minimizing search technique, which is a search-based QBF
+solving technique for general format QBFs. Unlike the most QBF solvers, it does
+not require its input format to be prenex and CNF. The search engine calculates
+i) truth probability, ii) expected search space, and iii) cost for each node and
+explores the search space in the 'minimal-cost-first' manner. I compare CMS with
+a baseline solver that does brute-force search directly, and with QuBE, sKizzo,
+and Quantor, the three state-of-the-art QBF solvers. Experiments show that CMS
+is 1-4 orders of magnitude faster than the baseline solver, and it is 1-2 orders
+of magnitude faster than the other three solvers in one-third of the free-format
+instances available in QBF 1.0 test suite from the QBFLIB.
+

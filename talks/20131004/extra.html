@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>(Lean Theorem Prover)</title>
+<meta name="author" content="((link (:type http :path //www.cs.cmu.edu/~soonhok :raw-link http://www.cs.cmu.edu/~soonhok :application nil :search-option nil :begin 1 :end 49 :contents-begin 35 :contents-end 46 :post-blank 1 :parent #0) Soonho Kong) /  (link (:type https :path //leodemoura.github.io :raw-link https://leodemoura.github.io :application nil :search-option nil :begin 51 :end 102 :contents-begin 83 :contents-end 100 :post-blank 0 :parent #0) Leonardo de Moura))"/>
+<link rel="stylesheet" href="../reveal.js/css/reveal.min.css"/>
+<link rel="stylesheet" href="../reveal.js/css/theme/one-mozilla.css" id="theme"/>
+<link rel="stylesheet" href="./../reveal.js/lib/css/solarized_dark.css"/>
+<link rel="stylesheet" href="../reveal.js/css/print/pdf.css" type="text/css" media="print"/>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript">MathJax.Hub.Config({"HTML-CSS": {scale: 80 }})</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<div id="org_reveal_title_top_margin" style="height: 100px"></div>
+<h1><img src=./img/lean_logo.svg width=650px></h1>
+<h3>How we develop</h3>
+<h3><small><a href="http://www.cs.cmu.edu/~soonhok">Soonho Kong</a> / <a href="https://leodemoura.github.io">Leonardo de Moura</a></small></h3>
+<p><small>2013/10/04, Microsoft Research, End of Internship Talk</small><br/>
+<small><a href="http://leanprover.net">http://leanprover.net</a></small>
+</p>
+</section>
+
+<section id="sec-1" >
+
+<h2>Goal</h2>
+<ul class="org-ul">
+<li class="fragment fade-in">Want to <b>focus</b> on Research
+</li>
+<li class="fragment fade-in"><b>Automate</b> what can be automated
+<ul class="org-ul">
+<li class="fragment fade-in">Build: Different Platforms x Different Compilers x &#x2026;
+</li>
+<li class="fragment fade-in">Tests
+</li>
+<li class="fragment fade-in">Dynamic Analysis
+</li>
+<li class="fragment fade-in">Coding Style
+</li>
+<li class="fragment fade-in">Code Coverage
+</li>
+<li class="fragment fade-in">Documentation
+</li>
+<li class="fragment fade-in">Binaries
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-2" >
+
+<h2>Goal</h2>
+<ul class="org-ul">
+<li>Want to <b>focus</b> on Research
+</li>
+<li><b>Automate</b> what can be automated
+</li>
+</ul>
+<ul class="org-ul">
+<li class="fragment fade-in"><b>Continuous Integration</b>: Do it as frequently as possible
+<ul class="org-ul">
+<li>Every commit
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-3" >
+
+<h2>Goal</h2>
+<ul class="org-ul">
+<li>Want to <b>focus</b> on Research
+</li>
+<li><b>Automate</b> what can be automated
+</li>
+<li><b>Continuous Integration</b>: Do it as frequently as possible
+</li>
+</ul>
+<ul class="org-ul">
+<li class="fragment fade-in"><b>Minimal responsibility</b>: $0, no server to maintain
+</li>
+</ul>
+</section>
+<section id="sec-4" >
+
+<h2>Big Picture</h2>
+<img src="./img/process1.png" alt="process1.png" />
+</section>
+</div>
+</div>
+<script src="../reveal.js/lib/js/head.min.js"></script>
+<script src="../reveal.js/js/reveal.min.js"></script>
+<script>
+
+                        // Full list of configuration options available here:
+                        // https://github.com/hakimel/reveal.js#configuration
+                        Reveal.initialize({
+                                controls: false,
+                                progress: true,
+                                history: true,
+                                center: false,
+                                rollingLinks: false,
+                                keyboard: true,
+                                overview: true,
+                                width: 1000, // slide width
+                                height: 700, // slide height
+                                margin: 0.10, // slide margin
+                                minScale: 0.50, // slide minimum scaling factor
+                                maxScale: 2.50, // slide maximum scaling factor
+
+
+                                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+                                transitionSpeed: 'default',
+
+                                // Optional libraries used to extend on reveal.js
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                                        // { src: '../reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                                        // { src: '../reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                                ]
+                        });
+</script>
+</body>
+</html>

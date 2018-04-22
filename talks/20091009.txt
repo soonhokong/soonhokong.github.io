@@ -1,0 +1,9 @@
+Current abstract parsing framework is used to check the syntax of the generated
+programs. However, it doesn't provide anything about the semantics of the
+generated programs. I will present the extension of abstract parsing framework
+for semantic analysis of the generated programs. The idea is to augment the
+parsing stack domain so that each parse state in the parse stack has a
+corresponding semantic function. When the parse stack is reduced, we construct
+new semantic function from the semantic functions which belong to the consumed
+parse states by reduction. I will explain this idea with illustrative examples.
+

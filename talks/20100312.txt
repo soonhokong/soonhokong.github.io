@@ -1,0 +1,29 @@
+I am going to propose a genetic-programming approach to the invariant
+generation problem. This is a work in progress. Wonchan Lee, Heejae 
+Shin,  two SOAR lab members, and I are currently involved in.
+
+The motivation of this work is based on the observations about how we
+solve the same problem with algorithmic-learning-based approach: 1)
+Information about invariants can be delivered to the algorithmic
+learning only through the form of answering queries. This limited
+power of intervening can make the system less efficient. 2)
+Algorithmic-learning-based approach solely relies on the randomized
+mechanism when it cannot solve the queries. Can we do better than a
+simple randomized mechanism? 3) Parallelization is not possible due to
+the serialized querying-answering process.
+
+I believe that genetic-programming-based approach can be an answer to
+the above problems of algorithmic-learning-based approach because of
+the following reasoning: 1) In genetic programming, we can directly
+manipulate the solutions (formulae). 2) With properly defined fitness
+function, genetic programming and genetic algorithm have outperformed
+naive randomized mechanism in various real-world examples. 3)
+Parallelization is inherently easier in genetic programming approach
+because there are no dependencies between two manipulation of
+solutions.
+
+I am going to focus on the key idea of fitness function design which
+plays a key role in genetic programming. When an invariant candidate
+turns to be not an invariant. We quantize how bad the candidate is by
+measuring the difference in abstract space which is obtained by
+predicate abstraction using SMT solver.

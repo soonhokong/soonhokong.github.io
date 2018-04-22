@@ -1,0 +1,716 @@
+#+Title: Git Tutorial
+#+Author: [[http://www.cs.cmu.edu/~soonhok][Soonho Kong]]
+#+Date: 2014/05/19
+#+REVEAL_Title_Img: ./img/git_tutorial.svg
+#+REVEAL_Title_Img_Width:  550px
+#+REVEAL_Title_Top_Margin: 200px
+#+REVEAL_Venue: CMU
+#+REVEAL_Webpage: http://www.cs.cmu.edu/~soonhok
+#+Email: soonhok@cs.cmu.edu
+#+Creator: Soonho Kong
+#+REVEAL_HLEVEL: 3
+#+REVEAL_TRANS: none
+#+REVEAL_THEME: ray
+#+REVEAL_HEAD_PREAMBLE: <script type="text/javascript" src="snap.svg-min.js"></script><script type="text/javascript">MathJax.Hub.Config({"HTML-CSS": {scale: 80 }})</script>
+#+OPTIONS: toc:nil reveal_mathjax:t num:nil reveal_center:t reveal_control:t reveal_overview:t reveal_history:t reveal_progress:t
+#+OPTIONS: reveal_rolling_links:nil
+#+OPTIONS: reveal_width:1000 reveal_height:800
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+
+* Introduction
+** [[./img/Git-Logo-2Color.svg]]
+** [[./img/git_svn_google_trend.png]]
+
+[[http://www.google.com/trends/explore#q%3Dgit%252C%2520svn&cmpt%3Dq][Google Trend: git vs. svn]]
+
+** [[./img/git_svn_ohloh.png]]
+
+[[http://www.ohloh.net/repositories/compare][Ohloh: Compare Repositories]]
+
+** [[./img/git.png]]
+
+Git: "The stupid content tracker"
+
+** [[./img/linus.jpeg]]
+
+"I did *not* really expect *anyone to use it*
+
+ because it’s so *hard* to use..."
+
+
+-[[http://typicalprogrammer.com/linus-torvalds-goes-off-on-linux-and-git/]["Linus Torvalds goes off on Linux and Git"]]
+
+(Fake Interview)
+
+* Concepts
+** Git $\simeq$ DAG
+
+[[./img/gitx-visualization.png]]
+
+"Once you realize that *git* is *just a DAG*
+
+with *commit objects* as *vertices*,
+
+and *pointers (refs)* into that graph,
+
+it becomes a lot *simpler to understand*"
+
+** Git $\simeq$ DAG
+
+[[./img/gitx-visualization.png]]
+
+Repository $\simeq$ Graph
+
+Node (Commit) $\simeq$ Files
+
+Label (refs) $\simeq$ Branch / Tag / etc
+
+** Commit Three Stage Thinking
+
+[[./img/github_diagrams/1.svg]]
+
+** Commit Three Stage Thinking
+
+[[./img/github_diagrams/2.svg]]
+
+** Commit Three Stage Thinking
+
+[[./img/github_diagrams/3.svg]]
+
+** Commit Three Stage Thinking
+
+[[./img/github_diagrams/4.svg]]
+
+** Workflow
+
+[[./img/git_workflow.png]]
+
+* Install and Config
+** Install
+OSX
+#+BEGIN_CODE
+$ brew install git
+#+END_CODE
+
+Linux
+#+BEGIN_CODE
+$ sudo apt-get install git
+#+END_CODE
+
+Windows
+#+BEGIN_CODE
+Visit http://git-scm.com/
+#+END_CODE
+
+** Config: Name & Email
+#+BEGIN_CODE
+$ git config --global user.name "your-name"
+$ git config --global user.email "your-email-address"
+#+END_CODE
+
+** Config: Useful Settings
+#+BEGIN_CODE
+# Colorize console output
+$ git config --global color.ui auto
+
+# Force files to be LF on Mac/Linux
+$ git config --global core.autocrlf input
+
+# Force Windows to convert to CRLF
+# on checkout and to LF on `add`
+$ git config --global core.autocrlf true
+#+END_CODE
+
+** Config: Like a Boss!
+
+By default for "git log --all"
+
+[[./img/git_log_all_without_boss.png]]
+
+** Config: Like a Boss!
+
+Now, "git la"
+
+[[./img/git_log_all_boss.png]]
+
+http://www.jayway.com/2012/11/27/configure-git-like-a-boss/
+
+* Basic(init/add/commit)
+
+http://try.github.io
+
+** Init
+From Scratch
+#+BEGIN_CODE
+# New project
+$ git init newproject
+$ cd newproject
+# ...start coding
+#+END_CODE
+
+** Init
+From Existing Dir
+#+BEGIN_CODE
+# Legacy project tree
+$ cd existingproject
+$ git init
+
+# Add all the code
+$ git add .
+$ git commit -m "Initial import"
+#+END_CODE
+
+** Commit Your First Commit
+#+BEGIN_CODE
+git add <filename>
+git status
+git commit -m "Helpful message"
+#+END_CODE
+
+* Network
+** Network
+
+[[./img/github_diagrams/network1.svg]]
+
+** Network
+
+[[./img/github_diagrams/network2.svg]]
+
+** Network
+
+[[./img/github_clone.png]]
+
+** Network
+
+#+REVEAL_HTML: <img src="./img/github_diagrams/network7.svg" width=500px/>
+
+#+BEGIN_CODE
+$ git clone git@github.com:soonhokong/dreal
+Cloning into 'dreal'...
+remote: Reusing existing pack: 79707, done.
+remote: Counting objects: 127, done.
+remote: Compressing objects: 100% (98/98), done.
+remote: Total 79834 (delta 37), reused 74 (delta 29)
+Receiving objects: 100% (79834/79834), 49.25 MiB | 2.34 MiB/s, done.
+Resolving deltas: 100% (39555/39555), done.
+Checking connectivity... done.
+#+END_CODE
+
+
+** Network
+
+#+REVEAL_HTML: <img src="./img/github_diagrams/network7.svg" width=500px/>
+
+#+BEGIN_CODE
+$ git remote -v
+origin	git@github.com:soonhokong/dreal (fetch)
+origin	git@github.com:soonhokong/dreal (push)
+
+
+
+
+
+
+#+END_CODE
+
+** Network
+
+#+REVEAL_HTML: <img src="./img/github_diagrams/network3.svg" width=500px/>
+
+#+BEGIN_CODE
+$ git push
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 286 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:soonhokong/dreal
+   bee5818..40155b4  master -> master
+
+#+END_CODE
+
+** Network
+
+#+REVEAL_HTML: <img src="./img/github_diagrams/network4.svg" width=500px/>
+
+#+BEGIN_CODE
+$ git fetch origin
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From github.com:soonhokong/dreal
+   bee5818..40155b4  master     -> origin/master
+
+
+#+END_CODE
+
+** Network
+
+#+REVEAL_HTML: <img src="./img/github_diagrams/network5.svg" width=500px/>
+
+#+BEGIN_CODE
+$ git merge origin/master
+Updating bee5818..40155b4
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+
+
+
+#+END_CODE
+
+
+** Network
+
+#+REVEAL_HTML: <img src="./img/github_diagrams/network6.svg" width=500px/>
+
+#+BEGIN_CODE
+$ git pull origin master
+From github.com:soonhokong/dreal
+ * branch            master     -> FETCH_HEAD
+Updating bee5818..40155b4
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+
+#+END_CODE
+
+** Network
+
+#+REVEAL_HTML: <img src="./img/github_diagrams/network6.svg" width=500px/>
+
+Don't use git *pull*!
+
+Use git *fetch* and then *git rebase* (or git *merge*)
+
+http://longair.net/blog/2009/04/16/git-fetch-and-merge
+
+* Centralized Workflow
+
+** Centralized Workflow
+
+[[./img/centralized_1.svg]]
+
+The way people are using *SVN*
+
+** Centralized Workflow
+
+[[./img/centralized_1.svg]]
+
+You can use *git* in this way, too
+
+** Centralized Workflow
+
+What's a *problem*?
+
+** Problem of Centralized Workflow
+
+[[./img/central_problem1.svg]]
+
+I'm working at CMU...
+
+** Problem of Centralized Workflow
+
+[[./img/central_problem1.svg]]
+
+I want to go home and *resume* the work.
+
+** Problem of Centralized Workflow
+
+[[./img/central_problem2.svg]]
+
+So I *push* what I've done so far to the repo
+
+** Problem of Centralized Workflow
+
+[[./img/central_problem3.svg]]
+
+@Home, I *pull* what I pushed and *resume* the work.
+
+** Problem of Centralized Workflow
+
+[[./img/central_problem4.svg]]
+
+In the meantime, Leo *pushed* a commit to the repo.
+
+** Problem of Centralized Workflow
+
+[[./img/central_problem5.svg]]
+
+I finished my part at home, *push* to the repo.
+
+** Problem of Centralized Workflow
+
+[[./img/central_problem6.svg]]
+
+*Problem*: Repo will be filled with *intermediate* commits
+
+** Problem of Centralized Workflow
+
+[[./img/central_problem6.svg]]
+
+*Problem*: Single Sync Point = $\uparrow$ *Merge Conflicts*
+
+** Problem of Centralized Workflow
+
+[[./img/central_problem6.svg]]
+
+*Not Scalable* ($\le$ 5 members)
+
+* Distributed workflow
+
+** Distributed workflow
+
+[[./img/dist_1.svg]]
+
+There is the *Blessed* repository.
+
+** Distributed workflow
+
+[[./img/lean_blessed.png]]
+
+** Distributed workflow
+
+[[./img/dreal_blessed.png]]
+
+
+** Distributed workflow
+
+[[./img/dist_2.svg]]
+
+** Distributed workflow
+
+[[./img/Bootcamp-Fork.png]]
+
+Clone *personal* repo (origin):
+#+BEGIN_CODE
+$ git clone git@github.com:soonhokong/dreal.git
+$ git remote -v
+origin	git@github.com:soonhokong/dreal.git (fetch)
+origin	git@github.com:soonhokong/dreal.git (push)
+#+END_CODE
+
+Add *blessed* repo:
+#+BEGIN_CODE
+$ git remote add blessed git@github.com:dreal/dreal
+$ git remote -v
+blessed	git@github.com:dreal/dreal.git (fetch)
+blessed	git@github.com:dreal/dreal.git (push)
+origin	git@github.com:soonhokong/dreal.git (fetch)
+origin	git@github.com:soonhokong/dreal.git (push)
+#+END_CODE
+
+** Distributed workflow
+
+[[./img/dist_3.svg]]
+
+Most of time, we push to *personal* repos.
+
+** Distributed workflow
+
+[[./img/dist_4.svg]]
+
+You can do *destructive* update (*forced* push) on your repo.
+
+** Distributed workflow
+
+[[./img/dist_5.svg]]
+
+When the work is solid, we push to the *blessed*.
+
+** Distributed workflow
+
+[[./img/dist_5.svg]]
+
+or make a *pull-request*.
+
+https://help.github.com/articles/using-pull-requests
+
+* Rebase
+
+Many *meaningful* git operations
+
+can be expressed
+
+in terms of the *rebase* command.
+
+** Merge vs. Rebase
+
+[[./img/rebase_1.svg]]
+
+*Fresh Morning!*
+
+** Merge vs. Rebase
+
+[[./img/rebase_2.svg]]
+
+*Commit* three changes.
+
+** Merge vs. Rebase
+
+[[./img/rebase_3.svg]]
+
+*Push* to the *personal* repo.
+
+** Merge vs. Rebase
+
+[[./img/rebase_3.svg]]
+
+Attempt to *push* to the *blessed* repo.
+
+** Merge vs. Rebase
+
+#+BEGIN_CODE
+$ git push blessed master
+Counting objects: 28, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 955 bytes | 0 bytes/s, done.
+Total 9 (delta 6), reused 0 (delta 0)
+To git@github.com:dreal/dreal.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:dreal/dreal.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+#+END_CODE
+
+*non-fast-forward??*
+
+** Merge vs. Rebase
+
+[[./img/rebase_4.svg]]
+
+*git fetch --all*
+
+** Merge vs. Rebase
+
+[[./img/rebase_4.svg]]
+
+*non-fast-forward!*
+
+** *Merge* vs. Rebase
+
+[[./img/rebase_5.svg]]
+
+*git merge blessed/master*
+
+** *Merge* vs. Rebase
+
+[[./img/rebase_6.svg]]
+
+*git push blessed master* -- OK...
+
+** *Merge* vs. Rebase
+
+[[./img/merge_hell1.jpg]]
+
+OK?
+
+** *Merge* vs. Rebase
+
+[[./img/merge_hell2.png]]
+
+OK?
+
+** *Merge* vs. Rebase
+
+[[./img/wide-gitk.gif]]
+
+*Merge Hell*
+
+** Version Controll Pitfalls
+
+ 1. History should be written in *chronological* order.
+ 2. Commits are *immutable* and *immovable* objects.
+
+#+reveal_html: <br/><br/>
+#+ATTR_REVEAL: :frag roll-in
+*git rebase* will free you!!
+
+** Merge vs. Rebase
+
+[[./img/rebase_4.svg]]
+
+*non-fast-forward!*
+
+** Merge vs. *Rebase*
+
+[[./img/rebase_4.svg]]
+
+Let's *rebase* my three commits on top of *blessed/master*.
+
+** Merge vs. *Rebase*
+
+[[./img/rebase_4.svg]]
+
+*rebase blessed/master*
+
+** Merge vs. *Rebase*
+
+[[./img/rebase_7.svg]]
+
+*fast-forwardable*
+
+** Merge vs. *Rebase*
+
+[[./img/rebase_8.svg]]
+
+*git push blessed master*
+
+** Interactive Rebase
+
+[[./img/irebase_1.svg]]
+
+** Interactive Rebase
+
+[[./img/irebase_2.svg]]
+
+** Interactive Rebase
+
+[[./img/irebase_3.svg]]
+
+** Interactive Rebase
+
+[[./img/irebase_4.svg]]
+
+** Interactive Rebase
+
+[[./img/irebase_4.svg]]
+
+I want to *combine* the three commits into one.
+
+** Interactive Rebase
+
+[[./img/irebase_4.svg]]
+
+*git rebase origin/master* doesn't do anything.
+
+** Interactive Rebase
+
+[[./img/irebase_4.svg]]
+
+Run *git rebase -i origin/master*
+
+** Interactive Rebase
+
+Run *git rebase -i origin/master*
+
+#+BEGIN_CODE
+pick 40155b4 Fix an Issue #1
+pick 42e5db9 Minor Fix of Previous Fix
+pick a31c7cd Minor Minor Fix or Previous Fix
+
+# Rebase ec2ae2b..cf0977c onto ec2ae2b
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+#+END_CODE
+
+** Interactive Rebase
+
+Run *git rebase -i origin/master*
+
+#+BEGIN_CODE
+pick 40155b4 Fix an Issue #1
+f 42e5db9 Minor Fix of Previous Fix
+f a31c7cd Minor Minor Fix or Previous Fix
+
+# Rebase ec2ae2b..cf0977c onto ec2ae2b
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+#+END_CODE
+
+** Interactive Rebase
+
+[[./img/irebase_5.svg]]
+
+** *Warning* on Rebase
+
+[[./img/irebase_5.svg]]
+
+Rebase will create a *new* commit.
+
+** *Warning* on Rebase
+
+[[./img/rebase_warning_1.svg]]
+
+It's OK to rebase and *destructively* update *personal repo*.
+
+** *Warning* on Rebase
+
+[[./img/rebase_warning_2.svg]]
+
+It's OK to rebase and *destructively* update *personal repo*.
+
+** *Warning* on Rebase
+
+[[./img/rebase_warning_3.svg]]
+
+But you should *not destructively* update the *blessed repo*.
+
+** *Warning* on Rebase
+
+[[./img/rebase_warning_4.svg]]
+
+Because other users base on *blessed/master*.
+
+* Reset
+
+"Git Reset Demystified"
+
+http://git-scm.com/blog/2011/07/11/reset.html
+
+* Magit (emacs's git-mode)
+
+(Available from *package-list*)
+
+- https://github.com/mtdavidson/magit-cheatsheet/
+- http://vickychijwani.github.io/2011/09/09/Magit-Part-I/
+- http://vickychijwani.github.io/2011/11/26/An-Introduction-to-Magit-Part-II/
+
+* Github tips
+
+https://github.com/tiimgreen/github-cheat-sheet
+
+* Other Useful Resources
+
+ - Quick Guide : http://rogerdudler.github.io/git-guide/
+ - Complete Reference : http://git-scm.com/book
+ - Visual Git Reference : http://marklodato.github.io/visual-git-guide/index-en.html
+ - Nice Interactive Tutorial on Git Branches: http://pcottle.github.io/learnGitBranching/
+
+* Thank you

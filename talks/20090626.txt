@@ -1,0 +1,11 @@
+In this talk, I will introduce the basic idea and progress of my work - building
+program-specific prioritizer for the alarms produced by our static analyzer,
+Sparrow. Bug finders using static analysis usually produce overwhelmingly large
+number of alarms. Many of them are false positives and require us to manually
+inspect alarms. To assist this laborious manual inspection, Sparrow adopted
+ranking system which assigns higher score for the true-likely alarms. My goal is
+to specialize this ranking system for the program which has software
+repository. By utilizing information buried in software repository, I think that
+we can achieve better ranking system. I will show the experiments that I am
+doing and some numbers from them.
+
