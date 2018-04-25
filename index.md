@@ -48,6 +48,8 @@ Publications
 Talks
 -----
 
+ * 2018.04.25 **Drake: Dynamical Systems and Automotive Components** @MIT
+   [[Slides](./talks/20180425.pdf)]
  * 2016.04.28 **Efficient Delta-decision Procedure** @CMU
    [[Slides](./talks/20160428.pdf)]
  * 2016.04.06 **Automated Reasoning over the Reals** @Toyota Research Institute 
