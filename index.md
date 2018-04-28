@@ -1,7 +1,7 @@
 Title:   Soonho Kong
 Author:  Soonho Kong
 Date:    20 Apr 2018
-CSS: css/tufte.css
+CSS: css/tufte.min.css
 
 Soonho Kong
 ===========
