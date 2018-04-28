@@ -90,6 +90,31 @@ Talks
 [PCC09]: https://ti.arc.nasa.gov/events/pcc09/
 [APLAS09]: http://ropas.snu.ac.kr/aplas09/
 
+Professional Activities
+-----------------------
+
+Program committee member
+
+ - [WSC 2018](http://meetings2.informs.org/wordpress/wsc2018): Winter Simulation Conference 2018 (Cyber-Physical Systems track)
+ - [DARS 2018](https://darsworkshop.github.io/dars2018/index.html): Third Workshop on Design and Analysis of Robust Systems
+
+External reviewer
+
+[ATVA 2015](http://atva2015.ios.ac.cn),
+[ASE 2014](http://ase2014.org),
+[SAS 2013](https://www.microsoft.com/en-us/research/publication/proceedings-of-the-20th-static-analysis-symposium/),
+[FoSSaCS 2013](https://www.etaps.org/index.php/2013/fossacs),
+[POPL 2013](http://popl.mpi-sws.org/2013),
+[APLAS 2012](http://aplas12.kuis.kyoto-u.ac.jp),
+[SAS 2012](http://www.sas2012.ens.fr),
+[GPCE 2010](http://program-transformation.org/GPCE10),
+[SPLASH 2010](http://www.splashcon.org/2010),
+[CAV 2010](http://www.floc-conference.org/CAV-home.html),
+[VMCAI 2010](http://software.imdea.org/events/vmcai10),
+[SAS 2009](http://sas09.cs.ucdavis.edu),
+[DEFECTS 2009](https://www.microsoft.com/en-us/research/event/international-workshop-defects-large-software-systems-defects-2009/),
+[APLAS 2007](http://flint.cs.yale.edu/aplas2007)
+
 ---
 
 <div class="epigraph">
