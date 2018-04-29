@@ -1,6 +1,8 @@
-Title:   Soonho Kong
+Title:   Soonho Kong | Toyota Research Institute
 Author:  Soonho Kong
 Date:    20 Apr 2018
+Description: Research Scientist at Toyota Research Institute
+Language: en
 CSS: css/tufte.min.css
 
 Soonho Kong
