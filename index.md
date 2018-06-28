@@ -45,7 +45,7 @@ Publications
 
 Talks
 -----
- * 2018.06.23 **ℝeal Problems on the Road** @FoMA 2018, CMU, Pittsburgh, PA.
+ * 2018.06.23 **ℝeal Problems on the Road** @[FoMA 2018][FOMA18], CMU, Pittsburgh, PA.
    [[Slides](./talks/20180623.pdf)]
  * 2018.04.25 **Drake: Dynamical Systems and Automotive Components** @MIT
    [[Slides](./talks/20180425.pdf)]
@@ -82,6 +82,7 @@ Talks
  * 2009.08.15 **PCC Framework for Program Generators** @[PCC 2009][PCC09], Los Angeles, U.S.A
    [[Slides](./talks/20090815.pdf)]
 
+[FOMA18]: http://www.andrew.cmu.edu/user/avigad/Meetings/foma_workshop
 [TACAS15]: https://www.etaps.org/2015/tacas
 [CADE13]: http://www.cl.cam.ac.uk/~gp351/cade24/
 [VMCAI10]: http://software.imdea.org/events/vmcai10/
