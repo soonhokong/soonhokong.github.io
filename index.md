@@ -45,6 +45,8 @@ Publications
 
 Talks
 -----
+ * 2018.07.17 **Delta-Decision Procedures for Exists-Forall Problems over the Reals** @[CAV 2018][CAV18], Oxford, UK.
+   [[Slides](./talks/20180717.pdf)]
  * 2018.06.23 **ℝeal Problems on the Road** @[FoMA 2018][FOMA18], CMU, Pittsburgh, PA.
    [[Slides](./talks/20180623.pdf)]
  * 2018.04.25 **Drake: Dynamical Systems and Automotive Components** @MIT
@@ -82,6 +84,7 @@ Talks
  * 2009.08.15 **PCC Framework for Program Generators** @[PCC 2009][PCC09], Los Angeles, U.S.A
    [[Slides](./talks/20090815.pdf)]
 
+[CAV18]: http://cavconference.org/2018
 [FOMA18]: http://www.andrew.cmu.edu/user/avigad/Meetings/foma_workshop
 [TACAS15]: https://www.etaps.org/2015/tacas
 [CADE13]: http://www.cl.cam.ac.uk/~gp351/cade24/
