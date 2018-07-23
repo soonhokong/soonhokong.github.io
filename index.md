@@ -14,11 +14,13 @@ Research interests: automated reasoning and its applications toward robust cyber
 
 ![email] `soonho.kong@tri.global`\
 ![github] [`github.com/soonho-tri`](https://github.com/soonho-tri)\
+![cv] [`cv.pdf`](./cv.pdf)\
 ![location] `Cambridge, MA`
 
 [TRI]: https://www.tri.global
 [email]: ./img/email.svg "email" width=25px height=25px style="vertical-align: middle;"
 [github]: ./img/github.svg "github" width=25px height=25px style="vertical-align: middle;"
+[cv]: ./img/cv.svg "cv" width=25px height=25px style="vertical-align: middle;"
 [location]: ./img/location.svg "location" width=25px height=25px style="vertical-align: middle;"
 
 
