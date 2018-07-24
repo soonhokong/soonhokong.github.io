@@ -1,3 +1,5 @@
+all: index.html cv.pdf
+
 index.html: index.md bibtex.html css/tufte.min.css
 	multimarkdown index.md > $@
 	html-minifier $@ --collapse-whitespace --remove-comments -o $@
@@ -10,5 +12,8 @@ bibtex.html: bibtex.bib dsgplain.bst
 css/tufte.min.css: css/tufte.css
 	uglifycss $^ > $@
 
+cv.pdf: cv.tex
+	latexmk -pdf -xelatex cv
+
 clean:
-	rm -f index.html bibtex.html bibtex_bib.html bib2html* css/*.min.css
+	git clean -fxd

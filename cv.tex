@@ -13,6 +13,10 @@
 \usepackage{ifsym}
 \usepackage{marvosym}
 \usepackage{bibentry}
+
+\usepackage[backend=biber, style=numeric-comp, sorting=ydnt, maxnames=20, url=false, doi=false, isbn=false, useeditor=false]{biblatex}
+\addbibresource{bibtex.bib}
+
 \input{dvipsnam.def}
 \synctex=1
 
@@ -105,161 +109,157 @@ Bachelor of Science in Computer Science and Engineering
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \mysection{Publications}
-\vspace{-25pt}
 
-\begin{thebibliography}{10}
-\itemsep0pt
 
-\bibitem{10.1007/978-3-319-96142-2_15}
-  Delta-decision procedures for exists-forall problems over the reals.
-  \newblock Soonho Kong, Armando Solar-Lezama, and Sicun Gao.
-  \newblock In Hana Chockler and Georg Weissenbacher, editors, {\em Computer
-    Aided Verification}, pages 219--235, Cham, 2018. Springer International
-  Publishing.
+\nocite{*}
+\printbibliography[heading=none]
 
-\bibitem{Bae:2016:SAV:2883817.2883849}
-  {SMT}-based analysis of virtually synchronous distributed hybrid
-  systems.
-  \newblock Kyungmin Bae, Peter~Csaba \"{O}lveczky, Soonho Kong, Sicun Gao, and Edmund~M.
-  Clarke.
-  \newblock In {\em Proceedings of the 19th International Conference on Hybrid
-    Systems: Computation and Control}, HSCC '16, pages 145--154, New York, NY,
-  USA, 2016. ACM.
+%% \begin{thebibliography}{10}
+%% \itemsep0pt
 
-\bibitem{doi:10.1093/bioinformatics/btw270}
-  A network-driven approach for genome-wide association mapping.
-  \newblock Seunghak Lee, Soonho Kong, and Eric~P. Xing.
-  \newblock {\em Bioinformatics}, 32(12):i164--i173, 2016.
+%% \bibitem{10.1007/978-3-319-96142-2_15}
+%%   Delta-decision procedures for exists-forall problems over the reals.
+%%   \newblock Soonho Kong, Armando Solar-Lezama, and Sicun Gao.
+%%   \newblock In Hana Chockler and Georg Weissenbacher, editors, {\em Computer
+%%     Aided Verification}, pages 219--235, Cham, 2018. Springer International
+%%   Publishing.
 
-\bibitem{10.1007/978-3-319-45177-0_9}
-  Bifurcation analysis of cardiac alternans using delta-decidability.
-  \newblock Md.~Ariful Islam, Greg Byrne, Soonho Kong, Edmund~M. Clarke, Rance Cleaveland,
-  Flavio~H. Fenton, Radu Grosu, Paul~L. Jones, and Scott~A. Smolka.
-  \newblock In Ezio Bartocci, Pietro Lio, and Nicola Paoletti, editors, {\em
-  Computational Methods in Systems Biology}, pages 132--146, Cham, 2016.
-  Springer International Publishing.
+%% \bibitem{Bae:2016:SAV:2883817.2883849}
+%%   {SMT}-based analysis of virtually synchronous distributed hybrid
+%%   systems.
+%%   \newblock Kyungmin Bae, Peter~Csaba \"{O}lveczky, Soonho Kong, Sicun Gao, and Edmund~M.
+%%   Clarke.
+%%   \newblock In {\em Proceedings of the 19th International Conference on Hybrid
+%%     Systems: Computation and Control}, HSCC '16, pages 145--154, New York, NY,
+%%   USA, 2016. ACM.
 
-\bibitem{Kong:2015:D9A:2945565.2945606}
-  {dReach}: Delta-reachability analysis for hybrid systems.
-  \newblock Soonho Kong, Sicun Gao, Wei Chen, and Edmund Clarke.
-  \newblock In {\em Proceedings of the 21st International Conference on Tools and
-  Algorithms for the Construction and Analysis of Systems - Volume 9035}, pages
-  200--205, New York, NY, USA, 2015. Springer-Verlag New York, Inc.
+%% \bibitem{doi:10.1093/bioinformatics/btw270}
+%%   A network-driven approach for genome-wide association mapping.
+%%   \newblock Seunghak Lee, Soonho Kong, and Eric~P. Xing.
+%%   \newblock {\em Bioinformatics}, 32(12):i164--i173, 2016.
 
-\bibitem{Liu:2015:TPP:2728606.2728634}
-  Towards personalized prostate cancer therapy using delta-reachability
-analysis.
-\newblock Bing Liu, Soonho Kong, Sicun Gao, Paolo Zuliani, and Edmund~M. Clarke.
-\newblock In {\em Proceedings of the 18th International Conference on Hybrid
-  Systems: Computation and Control}, HSCC '15, pages 227--232, New York, NY,
-  USA, 2015. ACM.
+%% \bibitem{10.1007/978-3-319-45177-0_9}
+%%   Bifurcation analysis of cardiac alternans using delta-decidability.
+%%   \newblock Md.~Ariful Islam, Greg Byrne, Soonho Kong, Edmund~M. Clarke, Rance Cleaveland,
+%%   Flavio~H. Fenton, Radu Grosu, Paul~L. Jones, and Scott~A. Smolka.
+%%   \newblock In Ezio Bartocci, Pietro Lio, and Nicola Paoletti, editors, {\em
+%%   Computational Methods in Systems Biology}, pages 132--146, Cham, 2016.
+%%   Springer International Publishing.
 
-\bibitem{10.1007/978-3-319-21401-6_26}
-  The lean theorem prover (system description).
-  \newblock Leonardo de~Moura, Soonho Kong, Jeremy Avigad, Floris van Doorn, and Jakob von
-  Raumer.
-  \newblock In Amy~P. Felty and Aart Middeldorp, editors, {\em Automated
-  Deduction - CADE-25}, pages 378--388, Cham, 2015. Springer International
-  Publishing.
+%% \bibitem{Kong:2015:D9A:2945565.2945606}
+%%   {dReach}: Delta-reachability analysis for hybrid systems.
+%%   \newblock Soonho Kong, Sicun Gao, Wei Chen, and Edmund Clarke.
+%%   \newblock In {\em Proceedings of the 21st International Conference on Tools and
+%%   Algorithms for the Construction and Analysis of Systems - Volume 9035}, pages
+%%   200--205, New York, NY, USA, 2015. Springer-Verlag New York, Inc.
 
-\bibitem{10.1007/978-3-319-23401-4_3}
-  {SReach}: A probabilistic bounded delta-reachability analyzer for
-  stochastic hybrid systems.
-  \newblock Qinsi Wang, Paolo Zuliani, Soonho Kong, Sicun Gao, and Edmund~M. Clarke.
-  \newblock In Olivier Roux and J{\'e}r{\'e}mie Bourdon, editors, {\em
-  Computational Methods in Systems Biology}, pages 15--27, Cham, 2015. Springer
-  International Publishing.
+%% \bibitem{Liu:2015:TPP:2728606.2728634}
+%%   Towards personalized prostate cancer therapy using delta-reachability
+%% analysis.
+%% \newblock Bing Liu, Soonho Kong, Sicun Gao, Paolo Zuliani, and Edmund~M. Clarke.
+%% \newblock In {\em Proceedings of the 18th International Conference on Hybrid
+%%   Systems: Computation and Control}, HSCC '15, pages 227--232, New York, NY,
+%%   USA, 2015. ACM.
 
-\bibitem{10.1007/978-3-319-12982-2_8}
-  Parameter synthesis for cardiac cell hybrid models using
-  $\delta$-decisions.
-  \newblock Bing Liu, Soonho Kong, Sicun Gao, Paolo Zuliani, and Edmund~M. Clarke.
-  \newblock In Pedro Mendes, Joseph~O. Dada, and Kieran Smallbone, editors, {\em
-  Computational Methods in Systems Biology}, pages 99--113, Cham, 2014.
-  Springer International Publishing.
+%% \bibitem{10.1007/978-3-319-21401-6_26}
+%%   The lean theorem prover (system description).
+%%   \newblock Leonardo de~Moura, Soonho Kong, Jeremy Avigad, Floris van Doorn, and Jakob von
+%%   Raumer.
+%%   \newblock In Amy~P. Felty and Aart Middeldorp, editors, {\em Automated
+%%   Deduction - CADE-25}, pages 378--388, Cham, 2015. Springer International
+%%   Publishing.
 
-\bibitem{7034679}
-  Proof generation from delta-decisions.
-  \newblock Sicun Gao, Soonho Kong, and Edmund~M. Clarke.
-  \newblock In {\em 2014 16th International Symposium on Symbolic and Numeric
-  Algorithms for Scientific Computing}, pages 156--163, Sept 2014.
+%% \bibitem{10.1007/978-3-319-23401-4_3}
+%%   {SReach}: A probabilistic bounded delta-reachability analyzer for
+%%   stochastic hybrid systems.
+%%   \newblock Qinsi Wang, Paolo Zuliani, Soonho Kong, Sicun Gao, and Edmund~M. Clarke.
+%%   \newblock In Olivier Roux and J{\'e}r{\'e}mie Bourdon, editors, {\em
+%%   Computational Methods in Systems Biology}, pages 15--27, Cham, 2015. Springer
+%%   International Publishing.
 
-\bibitem{jung_kong_david_wang_yi_2015}
-  Automatically inferring loop invariants via algorithmic learning.
-  \newblock Yungbum Jung, Soonho Kong, Cristina David, Bow-Yaw Wang, and Kwangkeun Yi.
-  \newblock {\em Mathematical Structures in Computer Science}, 25(4):892–915,
-  2015.
+%% \bibitem{10.1007/978-3-319-12982-2_8}
+%%   Parameter synthesis for cardiac cell hybrid models using
+%%   $\delta$-decisions.
+%%   \newblock Bing Liu, Soonho Kong, Sicun Gao, Paolo Zuliani, and Edmund~M. Clarke.
+%%   \newblock In Pedro Mendes, Joseph~O. Dada, and Kieran Smallbone, editors, {\em
+%%   Computational Methods in Systems Biology}, pages 99--113, Cham, 2014.
+%%   Springer International Publishing.
 
-\bibitem{Gao2013SatisfiabilityMO}
-  Satisfiability modulo {ODEs}.
-  \newblock Sicun Gao, Soonho Kong, and Edmund~M. Clarke.
-  \newblock {\em 2013 Formal Methods in Computer-Aided Design}, pages 105--112,
-  2013.
+%% \bibitem{7034679}
+%%   Proof generation from delta-decisions.
+%%   \newblock Sicun Gao, Soonho Kong, and Edmund~M. Clarke.
+%%   \newblock In {\em 2014 16th International Symposium on Symbolic and Numeric
+%%   Algorithms for Scientific Computing}, pages 156--163, Sept 2014.
 
-\bibitem{Gao:2013:DSS:2523828.2523842}
-  {dReal}: An {SMT} solver for nonlinear theories over the reals.
-  \newblock Sicun Gao, Soonho Kong, and Edmund~M. Clarke.
-  \newblock In {\em Proceedings of the 24th International Conference on Automated
-  Deduction}, CADE'13, pages 208--214, Berlin, Heidelberg, 2013.
-  Springer-Verlag.
+%% \bibitem{jung_kong_david_wang_yi_2015}
+%%   Automatically inferring loop invariants via algorithmic learning.
+%%   \newblock Yungbum Jung, Soonho Kong, Cristina David, Bow-Yaw Wang, and Kwangkeun Yi.
+%%   \newblock {\em Mathematical Structures in Computer Science}, 25(4):892–915,
+%%   2015.
 
-\bibitem{Chaki:2013:CSP:2941729.2941739}
-  Compositional sequentialization of periodic programs.
-  \newblock Sagar Chaki, Arie Gurfinkel, Soonho Kong, and Ofer Strichman.
-  \newblock In {\em Proceedings of the 14th International Conference on
-  Verification, Model Checking, and Abstract Interpretation - Volume 7737},
-  VMCAI 2013, pages 536--554, New York, NY, USA, 2013. Springer-Verlag New
-  York, Inc.
+%% \bibitem{Gao2013SatisfiabilityMO}
+%%   Satisfiability modulo {ODEs}.
+%%   \newblock Sicun Gao, Soonho Kong, and Edmund~M. Clarke.
+%%   \newblock {\em 2013 Formal Methods in Computer-Aided Design}, pages 105--112,
+%%   2013.
 
-\bibitem{Kong:2010:AIQ:1947873.1947904}
-  Automatically inferring quantified loop invariants by algorithmic
-  learning from simple templates.
-  \newblock Soonho Kong, Yungbum Jung, Cristina David, Bow-Yaw Wang, and Kwangkeun Yi.
-  \newblock In {\em Proceedings of the 8th Asian Conference on Programming
-  Languages and Systems}, APLAS'10, pages 328--343, Berlin, Heidelberg, 2010.
-  Springer-Verlag.
+%% \bibitem{Gao:2013:DSS:2523828.2523842}
+%%   {dReal}: An {SMT} solver for nonlinear theories over the reals.
+%%   \newblock Sicun Gao, Soonho Kong, and Edmund~M. Clarke.
+%%   \newblock In {\em Proceedings of the 24th International Conference on Automated
+%%   Deduction}, CADE'13, pages 208--214, Berlin, Heidelberg, 2013.
+%%   Springer-Verlag.
 
-\bibitem{Jung:2010:DIA:2127753.2127771}
-  Deriving invariants by algorithmic learning, decision procedures, and
-  predicate abstraction.
-  \newblock Yungbum Jung, Soonho Kong, Bow-Yaw Wang, and Kwangkeun Yi.
-  \newblock In {\em Proceedings of the 11th International Conference on
-  Verification, Model Checking, and Abstract Interpretation}, VMCAI'10, pages
-  180--196, Berlin, Heidelberg, 2010. Springer-Verlag.
+%% \bibitem{Chaki:2013:CSP:2941729.2941739}
+%%   Compositional sequentialization of periodic programs.
+%%   \newblock Sagar Chaki, Arie Gurfinkel, Soonho Kong, and Ofer Strichman.
+%%   \newblock In {\em Proceedings of the 14th International Conference on
+%%   Verification, Model Checking, and Abstract Interpretation - Volume 7737},
+%%   VMCAI 2013, pages 536--554, New York, NY, USA, 2013. Springer-Verlag New
+%%   York, Inc.
 
-\bibitem{Kong:2009:APT:1621607.1621625}
-  Abstract parsing for two-staged languages with concatenation.
-  \newblock Soonho Kong, Wontae Choi, and Kwangkeun Yi.
-  \newblock In {\em Proceedings of the Eighth International Conference on
-  Generative Programming and Component Engineering}, GPCE '09, pages 109--116,
-  New York, NY, USA, 2009. ACM.
+%% \bibitem{Kong:2010:AIQ:1947873.1947904}
+%%   Automatically inferring quantified loop invariants by algorithmic
+%%   learning from simple templates.
+%%   \newblock Soonho Kong, Yungbum Jung, Cristina David, Bow-Yaw Wang, and Kwangkeun Yi.
+%%   \newblock In {\em Proceedings of the 8th Asian Conference on Programming
+%%   Languages and Systems}, APLAS'10, pages 328--343, Berlin, Heidelberg, 2010.
+%%   Springer-Verlag.
 
-\bibitem{KoChYi-PCC-2009}
-  {PCC} framework for program-generators.
-  \newblock Soonho Kong, Wontae Choi, and Kwangkeun Yi.
-  \newblock In {\em Workshop on Proof-Carrying Code and Software Certification},
-  2009.
+%% \bibitem{Jung:2010:DIA:2127753.2127771}
+%%   Deriving invariants by algorithmic learning, decision procedures, and
+%%   predicate abstraction.
+%%   \newblock Yungbum Jung, Soonho Kong, Bow-Yaw Wang, and Kwangkeun Yi.
+%%   \newblock In {\em Proceedings of the 11th International Conference on
+%%   Verification, Model Checking, and Abstract Interpretation}, VMCAI'10, pages
+%%   180--196, Berlin, Heidelberg, 2010. Springer-Verlag.
 
-\bibitem{5070712}
-  Automated testing of environment-dependent programs - a case study of
-  modeling the file system for {Pex}.
-  \newblock Soonho Kong, Nikolai Tillmann, and Jonathan de~Halleux.
-  \newblock In {\em 2009 Sixth International Conference on Information
-  Technology: New Generations}, pages 758--762, April 2009.
+%% \bibitem{Kong:2009:APT:1621607.1621625}
+%%   Abstract parsing for two-staged languages with concatenation.
+%%   \newblock Soonho Kong, Wontae Choi, and Kwangkeun Yi.
+%%   \newblock In {\em Proceedings of the Eighth International Conference on
+%%   Generative Programming and Component Engineering}, GPCE '09, pages 109--116,
+%%   New York, NY, USA, 2009. ACM.
 
-\end{thebibliography}
+%% \bibitem{KoChYi-PCC-2009}
+%%   {PCC} framework for program-generators.
+%%   \newblock Soonho Kong, Wontae Choi, and Kwangkeun Yi.
+%%   \newblock In {\em Workshop on Proof-Carrying Code and Software Certification},
+%%   2009.
+
+%% \bibitem{5070712}
+%%   Automated testing of environment-dependent programs - a case study of
+%%   modeling the file system for {Pex}.
+%%   \newblock Soonho Kong, Nikolai Tillmann, and Jonathan de~Halleux.
+%%   \newblock In {\em 2009 Sixth International Conference on Information
+%%   Technology: New Generations}, pages 758--762, April 2009.
+
+%% \end{thebibliography}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mysection{Software}
-
-I have been contributing to the following open-source systems:
-
-\vspace{0.2em}
-
-\textbf{Drake} : A planning, control, and analysis toolbox for nonlinear dynamical systems
-
+\textbf{Drake} : A planning, control, and analysis toolbox for nonlinear dynamical systems\\
 \textbf{dReal} : SMT Solver for Nonlinear Theories of the Reals
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mysection{Honors \amper~{} Awards}

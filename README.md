@@ -15,8 +15,8 @@ npm install -g uglifycss
 npm install -g html-minifier
 ```
 
-Generate index.html from index.md
----------------------------------
+Generate index.html and cv.pdf
+------------------------------
 
 ```bash
 make
