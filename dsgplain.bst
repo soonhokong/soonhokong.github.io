@@ -450,7 +450,7 @@ FUNCTION {format.in.ed.booktitle}
     { "" }
     { editor empty$
 	{ "In " booktitle emphasize * }
-	{ "In " format.editors * ", " * booktitle emphasize * }
+	{ "In " booktitle emphasize * }
       if$
     }
   if$
