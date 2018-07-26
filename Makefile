@@ -12,7 +12,7 @@ bibtex.html: bibtex.bib dsgplain.bst
 css/tufte.min.css: css/tufte.css
 	uglifycss $^ > $@
 
-cv.pdf: cv.tex
+cv.pdf: cv.tex bibtex.bib
 	latexmk -pdf -xelatex cv
 
 clean:
