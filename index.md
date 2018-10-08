@@ -100,6 +100,7 @@ Professional Activities
 
 Program committee member
 
+ - [HSCC 2019](http://hscc2019.eecs.umich.edu/re.html): 22st International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
  - [WSC 2018](http://meetings2.informs.org/wordpress/wsc2018): Winter Simulation Conference 2018 (Cyber-Physical Systems track)
  - [DARS 2018](https://darsworkshop.github.io/dars2018/index.html): Third Workshop on Design and Analysis of Robust Systems
 
