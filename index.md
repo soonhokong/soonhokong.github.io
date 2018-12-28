@@ -12,7 +12,7 @@ Soonho Kong
 Research scientist at [Toyota Research Institute][TRI]\
 Research interests: automated reasoning and its applications toward robust cyber-physical systems.
 
-![email] `soonho.kong@tri.global`\
+![email]  <a target="_blank" href="https://mailhide.io/e/jEgfF">email address</a>\
 ![github] [`github.com/soonho-tri`](https://github.com/soonho-tri)\
 ![cv] [`cv.pdf`](./cv.pdf)\
 ![location] `Cambridge, MA`
