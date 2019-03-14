@@ -102,6 +102,7 @@ Program committee member
 
  - [HSCC 2019](http://hscc2019.eecs.umich.edu/re.html): 22st International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
  - [NSV 2019](https://nsv19.mpi-sws.org): 12th International Workshop on Numerical Software Verification 2019
+ - [DARS 2019](https://sites.google.com/view/dars2019): 4th Workshop on the Design and Analysis of Robust Systems
  - [WSC 2018](http://meetings2.informs.org/wordpress/wsc2018): Winter Simulation Conference 2018 (Cyber-Physical Systems track)
  - [DARS 2018](https://darsworkshop.github.io/dars2018/index.html): Third Workshop on Design and Analysis of Robust Systems
 
