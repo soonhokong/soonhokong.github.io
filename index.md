@@ -100,7 +100,7 @@ Professional Activities
 
 Program committee member
 
- - [MEMOCODE 2019](http://memocode.irisa.fr/2019): 17th ACM-IEEE International Conference on Formal Methods and Models for System Design
+ - [MEMOCODE 2019](https://memocode.github.io/2019): 17th ACM-IEEE International Conference on Formal Methods and Models for System Design
  - [HSCC 2019](http://hscc2019.eecs.umich.edu/re.html): 22st International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
  - [NSV 2019](https://nsv19.mpi-sws.org): 12th International Workshop on Numerical Software Verification 2019
  - [DARS 2019](https://sites.google.com/view/dars2019): 4th Workshop on the Design and Analysis of Robust Systems
