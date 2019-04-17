@@ -10,4 +10,5 @@ cv.run.xml
 cv.synctex.gz
 cv.xdv
 auto/
+build/
 
