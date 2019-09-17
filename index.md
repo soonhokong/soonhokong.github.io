@@ -99,9 +99,9 @@ Professional Activities
 -----------------------
 
 Program committee member
-
+ - [HSCC 2020](https://berkeleylearnverify.github.io/HSCC_2020/): 23rd International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
  - [MEMOCODE 2019](https://memocode.github.io/2019): 17th ACM-IEEE International Conference on Formal Methods and Models for System Design
- - [HSCC 2019](http://hscc2019.eecs.umich.edu/re.html): 22st International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
+ - [HSCC 2019](http://hscc2019.eecs.umich.edu/re.html): 22nd International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
  - [NSV 2019](https://nsv19.mpi-sws.org): 12th International Workshop on Numerical Software Verification 2019
  - [DARS 2019](https://sites.google.com/view/dars2019): 4th Workshop on the Design and Analysis of Robust Systems
  - [WSC 2018](http://meetings2.informs.org/wordpress/wsc2018): Winter Simulation Conference 2018 (Cyber-Physical Systems track)
@@ -109,6 +109,7 @@ Program committee member
 
 External reviewer
 
+[POPL 2020](https://popl20.sigplan.org),
 [ATVA 2015](http://atva2015.ios.ac.cn),
 [ASE 2014](http://ase2014.org),
 [SAS 2013](https://www.microsoft.com/en-us/research/publication/proceedings-of-the-20th-static-analysis-symposium/),
