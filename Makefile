@@ -12,8 +12,11 @@ bibtex.html: bibtex.bib dsgplain.bst
 css/tufte.min.css: css/tufte.css
 	uglifycss $^ > $@
 
-cv.pdf: cv.tex bibtex.bib
+build/cv.pdf: cv.tex bibtex.bib
 	latexmk -pdf -xelatex cv
+
+cv.pdf: build/cv.pdf
+	cp build/cv.pdf cv.pdf
 
 clean:
 	git clean -fxd
