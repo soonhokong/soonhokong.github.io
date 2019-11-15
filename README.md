@@ -21,3 +21,7 @@ Generate index.html and cv.pdf
 ```bash
 make
 ```
+
+Resources
+---------
+ - Find all those broken links: https://github.com/JustinBeckwith/linkinator
