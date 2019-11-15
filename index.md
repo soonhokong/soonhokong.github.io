@@ -87,7 +87,7 @@ Talks
    [[Slides](./talks/20090815.pdf)]
 
 [CAV18]: http://cavconference.org/2018
-[FOMA18]: http://www.andrew.cmu.edu/user/avigad/Meetings/foma_workshop
+[FOMA18]: https://www.andrew.cmu.edu/user/avigad/meetings/foma_workshop
 [TACAS15]: https://www.etaps.org/2015/tacas
 [CADE13]: http://www.cl.cam.ac.uk/~gp351/cade24/
 [VMCAI10]: http://software.imdea.org/events/vmcai10/
@@ -101,7 +101,7 @@ Professional Activities
 Program committee member
  - [HSCC 2020](https://berkeleylearnverify.github.io/HSCC_2020/): 23rd International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
  - [MEMOCODE 2019](https://memocode.github.io/2019): 17th ACM-IEEE International Conference on Formal Methods and Models for System Design
- - [HSCC 2019](http://hscc2019.eecs.umich.edu/re.html): 22nd International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
+ - [HSCC 2019](http://hscc2019.eecs.umich.edu): 22nd International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
  - [NSV 2019](https://nsv19.mpi-sws.org): 12th International Workshop on Numerical Software Verification 2019
  - [DARS 2019](https://sites.google.com/view/dars2019): 4th Workshop on the Design and Analysis of Robust Systems
  - [WSC 2018](http://meetings2.informs.org/wordpress/wsc2018): Winter Simulation Conference 2018 (Cyber-Physical Systems track)
@@ -115,10 +115,10 @@ External reviewer
 [SAS 2013](https://www.microsoft.com/en-us/research/publication/proceedings-of-the-20th-static-analysis-symposium/),
 [FoSSaCS 2013](https://www.etaps.org/index.php/2013/fossacs),
 [POPL 2013](http://popl.mpi-sws.org/2013),
-[APLAS 2012](http://aplas12.kuis.kyoto-u.ac.jp),
-[SAS 2012](http://www.sas2012.ens.fr),
+[APLAS 2012](http://goto.ucsd.edu/~rjhala/aplas2012/index.html),
+[jp 2012](https://www.di.ens.fr/sas2012),
 [GPCE 2010](http://program-transformation.org/GPCE10),
-[SPLASH 2010](http://www.splashcon.org/2010),
+[SPLASH 2010](https://dl.acm.org/citation.cfm?id=1869459),
 [CAV 2010](http://www.floc-conference.org/CAV-home.html),
 [VMCAI 2010](http://software.imdea.org/events/vmcai10),
 [SAS 2009](http://sas09.cs.ucdavis.edu),
