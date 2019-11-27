@@ -25,3 +25,6 @@ make
 Resources
 ---------
  - Find all those broken links: https://github.com/JustinBeckwith/linkinator
+    ```bash
+    npx linkinator .
+    ```
