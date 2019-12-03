@@ -116,7 +116,7 @@ External reviewer
 [FoSSaCS 2013](https://www.etaps.org/index.php/2013/fossacs),
 [POPL 2013](http://popl.mpi-sws.org/2013),
 [APLAS 2012](http://goto.ucsd.edu/~rjhala/aplas2012/index.html),
-[jp 2012](https://www.di.ens.fr/sas2012),
+[SAS 2012](https://www.di.ens.fr/sas2012),
 [GPCE 2010](http://program-transformation.org/GPCE10),
 [SPLASH 2010](https://dl.acm.org/citation.cfm?id=1869459),
 [CAV 2010](http://www.floc-conference.org/CAV-home.html),
