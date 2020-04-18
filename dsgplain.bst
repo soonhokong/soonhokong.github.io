@@ -48,6 +48,7 @@ ENTRY
     month
     note
     number
+    nationality
     organization
     pages
     publisher
@@ -342,6 +343,11 @@ FUNCTION {format.bvolume}
       "volume and number" number either.or.check
     }
   if$
+}
+
+FUNCTION {format.patent_number}
+{
+  "\\" * nationality * " Patent #" * number * ""
 }
 
 FUNCTION {format.number.series}
@@ -727,6 +733,20 @@ FUNCTION {inproceedings}
       format.pages output
     }
   if$
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {patent}
+{ output.bibitem
+  format.title "title" output.check
+  new.block
+  format.authors "author" output.check
+  new.block
+  "\\" write$
+  format.patent_number output
+  format.date "year" output.check
   new.block
   note output
   fin.entry
