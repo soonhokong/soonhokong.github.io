@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                         %
+%  Prostate Cancer Model  %
+%                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Run#1:
+----
+parameters: r0 in [0,7.99] r1 in [8,15], patient#1 
+simulation time: 365
+answer: unsat
+comment: rule out H1
+options: -k {2,4,6,8} --precision=0.001
+-------
+
+Run#2:
+----
+parameters: r0 in [0,7.99] r1 in [8,15], patient#1 
+simulation time: 365
+answer: unsat
+comment: rule out H2
+options: -k {2,4,6,8} --precision=0.001
+-------
+
+Run#3:
+----
+parameters: r0 in [0,7.99] r1 in [8,15], patient#1 
+simulation time: 365
+answer: unsat
+comment: choose H3 
+options: -k 4 --precision=0.001
+-------
+
+Run#4:
+----
+parameters: x(0) in [20,30], patient#1 
+simulation time: 365
+answer: sat
+comment: half-time less than 60 days
+options: -k 1 --precision=0.001
+
+
+Run#5:
+----
+parameters: x(0) in [15,17], default 
+simulation time: 365
+answer: unsat
+comment: [Ideta's model] half-time larger than 60 days
+options: -k 1 --precision=0.001
+
+
+Run#6:
+----
+parameters: r0 in [0,7.99] r1 in [8,15], patient#1 
+simulation time: 365
+answer: sat
+comment: predict treatment scheme for patient#1
+options: -k 4 --precision=0.001
+-------
+
+
+Run#7:
+----
+parameters: r0 in [0,7.99] r1 in [8,15], patient#15 
+simulation time: 365
+answer: sat
+comment: predict treatment scheme for patient#15
+options: -k 1 --precision=0.001
+-------
+
+
+Run#8:
+----
+parameters: r0 in [0,7.99] r1 in [8,15], patient#26 
+simulation time: 365
+answer: sat
+comment: predict treatment scheme for patient#26
+options: -k 3 --precision=0.001
+-------
+
+
+Run#9:
+----
+parameters: r0 in [0,7.99] r1 in [8,15], patient#11
+simulation time: 365
+answer: unsat
+comment: failed to predict treatment scheme for patient#11
+options: -k {2,4,6,8} --precision=0.001
+-------
+
+
+
+
+==========================================
+

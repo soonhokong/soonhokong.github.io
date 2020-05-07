@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                               %
+%         Cardiac Cell          %
+%                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+run 1
+model: bcf_4m_stim_good.drh
+result: sat
+initial: (u=0,v=1,w=1,s=0,0.9<=stim<=1.1)
+comment: 4-mode BCF can reach mode 4.
+
+run 2
+model: fk_4m_stim_good.drh
+result: sat
+initial: (u=0,v=1,w=1,0.9<=stim<=1.1)
+comment: 4-mode FK can reach mode 4.
+
+run 3
+model: bcf_4m_stim_bad.drh
+result: unsat
+initial: (u=0,v=1,w=1,s=0,0.0<=stim<=0.25)
+comment: 4-mode BCF cannot reach mode 4 with small stim.
+
+run 4
+model: fk_4m_stim_bad.drh
+result: unsat
+initial: (u=0,v=1,w=1,0.0<=stim<=0.25)
+comment: 4-mode FK cannot reach mode 4 with small stim.
+
+run 5
+model: bcf_7m_good.drh
+result: sat
+initial: (u=0,v=1,w=1,s=0)
+comment: BCF can reproduce spike-and-dome shape.
+
+run 6
+model: fk_7m_stim_tsi_us_bad.drh
+result: unsat
+initial: (u=0,v=1,w=1,0.9<=stim<=1.1,1<=tsi<=2,0.5<=us<=2)
+comment: FK can not reproduce spike-and-dome shape.
+
+
+run 7
+model: bcf_4m_good.drh
+result: sat
+initial: (u=0,v=1,w=1,s=0)
+comment: bcf sat parameter combinations 
+
+run 8
+model: bcf_4m_bad.drh
+result: unsat
+initial: (u=0,v=1,w=1,s=0)
+comment: bcf unsat parameter combinations 
+
+run 9
+model: bcf_to1_bad.drh
+result: unsat
+initial: (u=0,v=1,w=1,s=0,0.0055<=to1<=0.0059)
+comment: bcf cannot jump from mode1 to mode2 
+
+run 10
+model: bcf_to2_bad.drh
+result: unsat
+initial: (u=0,v=1,w=1,s=0,0.1<=to2<=0.129)
+comment: bcf cannot jump from mode2 to mode3 
+
+run 11
+model: bcf_tso1_tso2_bad.drh
+result: unsat
+initial: (u=0,v=1,w=1,s=0,10<=tso1<=40,0.5<=tso2<=2)
+comment: bcf cannot jump from mode3 to mode4 
+
+
