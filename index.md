@@ -105,6 +105,7 @@ Professional Activities
 
 Program committee member
  - [HSCC 2020](https://berkeleylearnverify.github.io/HSCC_2020/): 23rd International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
+ - [MEMOCODE 2020](https://iitjammu.ac.in/conferences/memocode2020): 18th ACM-IEEE International Conference on Formal Methods and Models for System Design
  - [SpringSim 2020](https://scs.org/springsim/):  Spring Simulation Conference 2020 
  - [MEMOCODE 2019](https://memocode.github.io/2019): 17th ACM-IEEE International Conference on Formal Methods and Models for System Design
  - [HSCC 2019](http://hscc2019.eecs.umich.edu): 22nd International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
