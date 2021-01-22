@@ -9,7 +9,7 @@ xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-
 Soonho Kong
 ===========
 
-Research scientist at [Toyota Research Institute][TRI]\
+Senior research scientist at [Toyota Research Institute][TRI]\
 Research interests: automated reasoning and its applications toward robust cyber-physical systems.
 
 ![email]  <a target="_blank" href="https://mailhide.io/e/jEgfF">email address</a>\
