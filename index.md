@@ -114,6 +114,8 @@ Professional Activities
 -----------------------
 
 Program committee member
+ - [MEMOCODE 2021](https://lcs.ios.ac.cn/memocode21): 19th ACM-IEEE International Conference on Formal Methods and Models for System Design
+ - [ADHS 2021](https://sites.uclouvain.be/adhs21): 7th IFAC Conference on Analysis and Design of Hybrid Systems: Repeatability Evaluation
  - [HSCC 2021](https://hscc.acm.org/2021): 24rd International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
  - [MT-CPS 2021](https://sites.google.com/virginia.edu/mt-cps2021): 6th Workshop on Monitoring and Testing of Cyber-physical Systems
  - [HSCC 2020](https://berkeleylearnverify.github.io/HSCC_2020): 23rd International Conference on Hybrid Systems: Computation and Control: Repeatability Evaluation
