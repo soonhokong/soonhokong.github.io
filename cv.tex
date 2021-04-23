@@ -16,7 +16,12 @@
 \usepackage{xspace}
 
 \usepackage[backend=biber, style=numeric-comp, sorting=ydnt, maxnames=20, url=false, doi=false, isbn=false, useeditor=false]{biblatex}
+
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
 \addbibresource{publications.bib}
+
 % TODO(soonho): Handle this.
 % \addbibresource{patents.bib}
 
@@ -81,13 +86,14 @@ pdftitle={Soonho Kong - vita},pdfauthor={Soonho Kong}]{hyperref}
 \begin{document}
 \reversemarginpar
 {\huge Soonho Kong}\\[0.4cm]
-Research Scientist\\
+Senior Research Scientist\\
 \href{https://www.tri.global}{Toyota Research Institute}\\
 Building 100, Suite 1-201\\
 One Kendall Square, Cambridge, MA 02139\\
 
 Email: \url{soonho.kong@tri.global}\\
-Web: \url{https://soonhokong.github.io}
+Web: \url{https://soonhokong.github.io}\\
+Github: \url{https://github.com/soonho-tri}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mysection{Research Interests}
@@ -96,7 +102,7 @@ Automated reasoning and its applications toward robust CPS (Cyber-Physical Syste
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mysection{Education}
 \textbf{Carnegie Mellon University} \hfill \interval{Aug 2010}{Jun 2016}\\
-Ph.D. in Computer Science Department (All But Dissertation)\\
+Ph.D. in Computer Science Department (\emph{All But Dissertation})\\
 Advisor: \emc
 \vspace{0.5em}
 
@@ -110,6 +116,12 @@ Advisor: \kwang
 Bachelor of Science in Computer Science and Engineering
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mysection{Software}
+\href{https://github.com/dreal/dreal4}{\textbf{dReal}}: SMT solver for nonlinear theories of reals \hfill (Lead developer, since 2013)\\
+\href{https://drake.mit.edu}{\textbf{Drake}}: Model-based design and verification for robotics \hfill (Platform-reviewer, since 2016)\\
+\href{https://leanprover.github.io}{\textbf{Lean}}: Lean theorem prover \hfill (Contributor, 2013 -- 2016)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \mysection{Publications}
 
@@ -117,41 +129,69 @@ Bachelor of Science in Computer Science and Engineering
 \nocite{*}
 \printbibliography[heading=none]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mysection{Software}
-\textbf{Drake} : A planning, control, and analysis toolbox for nonlinear dynamical systems\\
-\textbf{dReal} : SMT Solver for Nonlinear Theories of the Reals
+\mysection{Patents}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mysection{Honors \amper Awards}
-\textbf{Kwanjeong Scholarship} \hfill \interval{Aug 2010}{May 2015}\\
-Kwanjeong Education Foundation
-\vspace{0.3em}
+\begin{thebibliography}{9}
 
-\textbf{National Graduate Science \amper Technology Scholarship} \hfill \interval{Sep 2008}{Aug 2009}\\
-Korea Student Aid Foundation(KOSAF)
-\vspace{0.3em}
+\bibitem{P1} ``Systems and methods for improving situational awareness of a user''.
+Jonathan Decastro, Frank Permenter, Soon Kong, Nikos Arechiga.
+US Patent 10,621,858.
 
-\textbf{Brain Korea 21 Global Internship (MSR \amper MSRA)} \hfill \interval{Aug 2008}{Nov 2008}\\
-Korea Research Foundation \hfill \interval{Aug 2007}{Feb 2008}\\
-\vspace{-0.6em}
+\bibitem{PA1} ``System and method for detecting errors and improving reliability of perception systems using logical scaffolds''.
+  Nikos Arechiga, Soonho Kong, Jonathan DeCastro, Sagar Behere, Dennis Park.
+  US Patent App. 16/745,560
+
+\bibitem{PA2} ``Certified control for self-driving cars''.
+  Daniel Jackson, Jonathan DeCastro, Soon Ho Kong, Nikos Arechiga Gonzalez, Dimitrios Koutentakis, Feng Ping Angela Leong, Mike Meichang Wang, Xin Zhang.
+  US Patent App. 16/745,560.
+
+\bibitem{PA3} ``Simulation-based technique to synthesize controllers that satisfy signal temporal logic specifications''.
+Nikos Arechiga, Karen Leung, Soon Ho Kong, Jonathan DeCastro, Frank Permenter
+US Patent App. 16/425,723.
+
+\bibitem{PA4} ``Personalized Notification System For Mobility as a Service''.
+Soonho Kong, Jonathan Decastro, Nikos Arechiga, Frank Permenter.
+US Patent App. 16/413,218.
+
+\bibitem{PA5} ``Actively adapting to driving environments based on human interactions''.
+Soonho Kong, Jonathan DeCastro, Nikos Arechiga, Frank Permenter.
+US Patent App. 16/279,857.
+
+\end{thebibliography}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \mysection{Honors \amper Awards}
+% \textbf{Kwanjeong Scholarship} \hfill \interval{Aug 2010}{May 2015}\\
+% Kwanjeong Education Foundation
+% \vspace{0.3em}
+
+% \textbf{National Graduate Science \amper Technology Scholarship} \hfill \interval{Sep 2008}{Aug 2009}\\
+% Korea Student Aid Foundation(KOSAF)
+% \vspace{0.3em}
+
+% \textbf{Brain Korea 21 Global Internship (MSR \amper MSRA)} \hfill \interval{Aug 2008}{Nov 2008}\\
+% Korea Research Foundation \hfill \interval{Aug 2007}{Feb 2008}\\
+% \vspace{-0.6em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mysection{Professional Activities}
-Program Committee Member:
-\begin{itemize}
-  \item HSCC 2021: Hybrid Systems: Computation and Control: Repeatability Evaluation
-  \item HSCC 2020: Hybrid Systems: Computation and Control: Repeatability Evaluation
-  \item MEMOCODE 2020: Formal Methods and Models for System Design
-  \item MEMOCODE 2019: Formal Methods and Models for System Design
-  \item HSCC 2019: Hybrid Systems: Computation and Control: Repeatability Evaluation
-  \item NSV 2019: Numerical Software Verification 2019
-  \item DARS 2019: 4th Workshop on the Design and Analysis of Robust Systems
-  \item WSC 2018: Winter Simulation Conference 2018 (Cyber-Physical Systems track)
-  \item DARS 2018: Third Workshop on Design and Analysis of Robust Systems
-\end{itemize}
-External Reviewer:
-POPL 2020, ATVA 2015, ASE 2014, FoSSaCS 2013, POPL 2013, APLAS 2012, SAS 2012,
+Program Committee Member:\\
+ ADHS 2021,
+ HSCC 2021,
+ MEMOCODE 2021,
+ MT-CPS 2021,
+ HSCC 2020,
+ MEMOCODE 2020,
+ DARS 2019,
+ HSCC 2019,
+ MEMOCODE 2019,
+ NSV 2019,
+ DARS 2018,
+ WSC 2018
+\\\\
+External Reviewer:\\
+IEEE-IV 2021, IEEE-IV 2020, POPL 2020, ATVA 2015, ASE 2014, FoSSaCS 2013, POPL 2013, APLAS 2012, SAS 2012,
 GPCE 2010, SPLASH 2010, CAV 2010, VMCAI 2010, SAS 2009, DEFECTS 2009, APLAS 2007
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
