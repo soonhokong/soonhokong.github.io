@@ -1,7 +1,7 @@
-Title:   Soonho Kong | Toyota Research Institute
+Title:   Soonho Kong | Amazon Web Services
 Author:  Soonho Kong
-Date:    20 Apr 2018
-Description: Research Scientist at Toyota Research Institute
+Date:    13 Sep 2021
+Description: Senior Applied Scientist at Amazon Web Services
 Language: en
 CSS: css/tufte.min.css
 xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38178018-3"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-38178018-3');</script>
@@ -9,14 +9,16 @@ xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-
 Soonho Kong
 ===========
 
-Senior research scientist at [Toyota Research Institute][TRI]\
-Research interests: automated reasoning and its applications toward robust cyber-physical systems.
+Senior applied scientist at [Amazon Web Services][ARG].\
+Research interests: automated reasoning and its applications toward robust CPSs.
 
-![email]  <a target="_blank" href="https://mailhide.io/e/jEgfF">email address</a>\
-![github] [`github.com/soonho-tri`](https://github.com/soonho-tri)\
+![email]  <a target="_blank" href="https://mailhide.io/e/HHFX0LX2">email address</a>\
+![github] [`github.com/soonhokong`](https://github.com/soonhokong)\
 ![cv] [`cv.pdf`](./cv.pdf)\
-![location] `Cambridge, MA`
 
+[ARG]: https://aws.amazon.com/security/provable-security
+[AWS]: https://aws.amazon.com
+[CPS]: https://en.wikipedia.org/wiki/Cyber-physical_system
 [TRI]: https://www.tri.global
 [email]: ./img/email.svg "email" width=25px height=25px style="vertical-align: middle;"
 [github]: ./img/github.svg "github" width=25px height=25px style="vertical-align: middle;"
@@ -27,12 +29,8 @@ Research interests: automated reasoning and its applications toward robust cyber
 Software
 --------
 
-Current Projects:
-
  - [dReal4][dreal4]: SMT solver for nonlinear theories of reals | Maintainer (2013 -- )
  - [Drake][drake]: Model-based design and verification for robotics | Platform-reviewer / Contributor (2016 -- )
-
-Previous Projects:
  - [Lean Theorem Prover][lean]: Contributor (2013 -- 2016)
  
 [dreal4]: https://github.com/dreal/dreal4
