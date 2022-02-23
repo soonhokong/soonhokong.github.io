@@ -30,7 +30,7 @@ Software
 --------
 
  - [dReal4][dreal4]: SMT solver for nonlinear theories of reals | Maintainer (2013 -- )
- - [Drake][drake]: Model-based design and verification for robotics | Platform-reviewer / Contributor (2016 -- )
+ - [Drake][drake]: Model-based design and verification for robotics | Platform-reviewer / Contributor (2016 -- 2021)
  - [Lean Theorem Prover][lean]: Contributor (2013 -- 2016)
  
 [dreal4]: https://github.com/dreal/dreal4
