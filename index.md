@@ -9,8 +9,14 @@ xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-
 Soonho Kong
 ===========
 
-Senior applied scientist at [Amazon Web Services][ARG].\
-Research interests: automated reasoning and its applications toward robust CPSs.
+I am a Senior Applied Scientist for [Amazon Web Services][AWS] within the
+[Automated Reasoning Group][ARG]. The primary focus of my research
+lies in the development and utilization of automated reasoning tools,
+with a particular emphasis on investigating their practical
+applications within real-world contexts. I obtained my PhD from
+[Carnegie Mellon University][CMU] under the guidance of [Professor
+Edmund Clarke][EMC], where my doctoral work concentrated on the design
+and implementation of highly efficient delta-decision tools.
 
 ![email]  <a target="_blank" href="https://mailhide.io/e/HHFX0LX2">email address</a>\
 ![github] [`github.com/soonhokong`](https://github.com/soonhokong)\
@@ -20,11 +26,12 @@ Research interests: automated reasoning and its applications toward robust CPSs.
 [AWS]: https://aws.amazon.com
 [CPS]: https://en.wikipedia.org/wiki/Cyber-physical_system
 [TRI]: https://www.tri.global
+[EMC]: https://en.wikipedia.org/wiki/Edmund_M._Clarke
+[CMU]: https://csd.cmu.edu
 [email]: ./img/email.svg "email" width=25px height=25px style="vertical-align: middle;"
 [github]: ./img/github.svg "github" width=25px height=25px style="vertical-align: middle;"
 [cv]: ./img/cv.svg "cv" width=25px height=25px style="vertical-align: middle;"
 [location]: ./img/location.svg "location" width=25px height=25px style="vertical-align: middle;"
-
 
 Software
 --------
