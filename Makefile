@@ -1,7 +1,11 @@
-all: index.html cv.pdf
+all: index.html cv.pdf lean/index.html
 
 index.html: index.md publications.html patents.html css/tufte.min.css
 	multimarkdown index.md > $@
+	html-minifier $@ --collapse-whitespace --remove-comments -o $@
+
+lean/index.html: lean/index.md css/tufte.min.css
+	multimarkdown lean/index.md > $@
 	html-minifier $@ --collapse-whitespace --remove-comments -o $@
 
 publications.html: publications.bib dsgplain.bst

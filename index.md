@@ -1,6 +1,6 @@
 Title:   Soonho Kong | Amazon Web Services
 Author:  Soonho Kong
-Date:    13 Sep 2021
+Date:    6 Dec 2023
 Description: Senior Applied Scientist at Amazon Web Services
 Language: en
 CSS: css/tufte.min.css
