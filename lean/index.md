@@ -19,6 +19,7 @@ xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-
 * Lean has been mentioned in Quanta’s The Year in Math and Computer Science two years in a row: [2020](https://www.quantamagazine.org/the-year-in-math-and-computer-science-20201223/) and [2021](https://www.quantamagazine.org/the-year-in-math-and-computer-science-20211223/).
 * [Will AI replace mathematicians?](https://bigthink.com/the-future/artificial-intelligence-replace-mathematicians/), Jordan Ellenberg’s article at Big Think.
 * [The Deep Link Equating Math Proofs and Computer Programs](https://www.quantamagazine.org/the-deep-link-equating-math-proofs-and-computer-programs-20231011/), Quanta article that mentions Lean.
+* [‘A-Team’ of Math Proves a Critical Link Between Addition and Sets.](https://www.quantamagazine.org/a-team-of-math-proves-a-critical-link-between-addition-and-sets-20231206/) Quanta article that mentions Lean.
 
 ##  External AI efforts based on Lean
 

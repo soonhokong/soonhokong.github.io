@@ -34,7 +34,7 @@ goal.
 Software
 --------
 
- - [Lean][lean]: Contributor (2013 -- )
+ - [Lean][lean]: Contributor (2013 -- ) ([more info](lean/index.html))
  - [dReal4][dreal4]: Maintainer (2013 -- )
  - [Drake][drake]: Platform-reviewer / Contributor (2016 -- 2021)
  
