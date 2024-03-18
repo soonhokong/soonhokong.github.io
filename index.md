@@ -9,14 +9,12 @@ xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-
 Soonho Kong
 ===========
 
-I am a Senior Applied Scientist for [Amazon Web Services][AWS] within the
-[Automated Reasoning Group][ARG]. The primary focus of my research
-lies in the development and utilization of automated reasoning tools,
-with a particular emphasis on investigating their practical
-applications within real-world contexts. I obtained my PhD from
-[Carnegie Mellon University][CMU] under the guidance of [Professor
-Edmund Clarke][EMC], where my doctoral work concentrated on the design
-and implementation of highly efficient delta-decision tools.
+I'm a Senior Applied Scientist for [Amazon Web Services][AWS] working
+within the [Automated Reasoning Group][ARG].  My research focuses on
+designing and implementing AI systems with formal reasoning
+capabilities. In particular, I'm interested in combining LLMs with
+interactive and automated theorem proving techniques to achieve this
+goal.
 
 ![email]  <a target="_blank" href="https://mailhide.io/e/HHFX0LX2">email address</a>\
 ![github] [`github.com/soonhokong`](https://github.com/soonhokong)\
@@ -36,9 +34,9 @@ and implementation of highly efficient delta-decision tools.
 Software
 --------
 
+ - [Lean][lean]: Contributor (2013 -- )
  - [dReal4][dreal4]: Maintainer (2013 -- )
  - [Drake][drake]: Platform-reviewer / Contributor (2016 -- 2021)
- - [Lean Theorem Prover][lean]: Contributor (2013 -- 2016)
  
 [dreal4]: https://github.com/dreal/dreal4
 [drake]: https://drake.mit.edu
