@@ -9,12 +9,16 @@ xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-
 Soonho Kong
 ===========
 
-I'm a Senior Applied Scientist for [Amazon Web Services][AWS] working
+I'm a Principal Applied Scientist for [Amazon Web Services][AWS] working
 within the [Automated Reasoning Group][ARG].  My research focuses on
 designing and implementing AI systems with formal reasoning
 capabilities. In particular, I'm interested in combining LLMs with
 interactive and automated theorem proving techniques to achieve this
 goal.
+
+I earned my PhD from Carnegie Mellon University under the supervision
+of Professor Edmund Clarke. My doctoral research focused on the design
+and implementation of delta-decision procedures.
 
 ![email]  <a target="_blank" href="https://mailhide.io/e/HHFX0LX2">email address</a>\
 ![github] [`github.com/soonhokong`](https://github.com/soonhokong)\
