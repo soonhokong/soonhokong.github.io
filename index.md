@@ -13,15 +13,11 @@ I'm a Principal Applied Scientist for [Amazon Web Services][AWS]
 working within the Neuro-Symbolic AI Lab. My research focuses on
 designing and implementing AI systems with formal reasoning
 capabilities, particularly combining LLMs with interactive and
-automated theorem proving techniques. This work contributes to
-improving Amazon Nova models through advanced reasoning
-capabilities. I earned my PhD from [Carnegie Mellon University][CMU]
-under the supervision of [Professor Edmund Clarke][EMC], where my
-doctoral research focused on the design and implementation of
-delta-decision procedures. I received the [CADE Skolem Award][skolem]
-for "The Lean Theorem Prover (System Description)" paper, which
-introduced the [Lean theorem prover][lean].
-
+automated theorem proving techniques. My work helps improve Amazon
+Nova models with advanced reasoning capabilities. I earned my PhD from
+[Carnegie Mellon University][CMU] under [Prof. Edmund Clarke][EMC],
+focusing on delta-decision procedures. I received the [CADE Skolem Award][skolem]
+for my contributions to the [Lean theorem prover][lean].
 
 ![email]  <a target="_blank" href="https://mailhide.io/e/HHFX0LX2">email address</a>\
 ![github] [`github.com/soonhokong`](https://github.com/soonhokong)\
@@ -73,43 +69,46 @@ Patents
 
 Talks
 -----
- * 2018.07.17 **Delta-Decision Procedures for Exists-Forall Problems over the Reals** @[CAV 2018][CAV18], Oxford, UK.
+ * 2025/06/02 **AI Challenges for Academia -- An Industry Perspective** @TILOS Industry Day 2025, UCSD, San Diego, CA.
+ * 2024/12/19 **Lean into the Future -- New Horizons in Mathematics, Programming, and AI** @Seoul National University, Seoul, Korea.
+ * 2024/12/17 **Lean into the Future -- New Horizons in Mathematics, Programming, and AI** @AI for Mathematics Workshop on Formalization, KIAS, Seoul, Korea.
+ * 2018/07/17 **Delta-Decision Procedures for Exists-Forall Problems over the Reals** @[CAV 2018][CAV18], Oxford, UK.
    [[Slides](./talks/20180717.pdf)]
- * 2018.06.23 **ℝeal Problems on the Road** @[FoMA 2018][FOMA18], CMU, Pittsburgh, PA.
+ * 2018/06/23 **ℝeal Problems on the Road** @[FoMA 2018][FOMA18], CMU, Pittsburgh, PA.
    [[Slides](./talks/20180623.pdf)]
- * 2018.04.25 **Drake: Dynamical Systems and Automotive Components** @MIT
+ * 2018/04/25 **Drake: Dynamical Systems and Automotive Components** @MIT
    [[Slides](./talks/20180425.pdf)]
- * 2016.04.28 **Efficient Delta-decision Procedure** @CMU
+ * 2016/04/28 **Efficient Delta-decision Procedure** @CMU
    [[Slides](./talks/20160428.pdf)]
- * 2016.04.06 **Automated Reasoning over the Reals** @Toyota Research Institute 
+ * 2016/04/06 **Automated Reasoning over the Reals** @Toyota Research Institute 
    [[Slides](./talks/20160406.pdf)]
- * 2016.03.16 **Delta-Reachability Analysis for Hybrid Systems** @Microsoft Research Redmond 
+ * 2016/03/16 **Delta-Reachability Analysis for Hybrid Systems** @Microsoft Research Redmond 
    [[Slides](./talks/20160316.pdf)]
- * 2016.01.07 **Delta-Reachability Analysis for Hybrid Systems** @Microsoft Research Cambridge, UK 
+ * 2016/01/07 **Delta-Reachability Analysis for Hybrid Systems** @Microsoft Research Cambridge, UK 
    [[Slides](./talks/20160316.pdf)]
- * 2015.05.18 **Delta-Reachability Analysis for Hybrid Systems** @CMU SCS Speakers Club Talk 
+ * 2015/05/18 **Delta-Reachability Analysis for Hybrid Systems** @CMU SCS Speakers Club Talk 
    [[Slides](./talks/20150518.pdf)]
- * 2015.04.14 **dReach: Delta-Reachability Analysis for Hybrid Systems** @[TACAS 2015][TACAS15], London, UK
+ * 2015/04/14 **dReach: Delta-Reachability Analysis for Hybrid Systems** @[TACAS 2015][TACAS15], London, UK
    [[Slides](./talks/20150414.pdf)]
- * 2013.06.12 **dReal: An SMT solver for nonlinear theories of the reals** @[CADE 2013][CADE13], Lake Placid, New York, U.S.
+ * 2013/06/12 **dReal: An SMT solver for nonlinear theories of the reals** @[CADE 2013][CADE13], Lake Placid, New York, U.S.
    [[Slides][20130612]]
- * 2012.09.21 **Compositional Sequentialization of Periodic Programs** @Programming Research Lab, Seoul National University
+ * 2012/09/21 **Compositional Sequentialization of Periodic Programs** @Programming Research Lab, Seoul National University
    [[Slides](./talks/20120921.pdf)]
- * 2012.08.09 **Verifying Concurrent Turing Machines** @SAS Unit Meeting, CMU SEI
+ * 2012/08/09 **Verifying Concurrent Turing Machines** @SAS Unit Meeting, CMU SEI
    [[Slides](./talks/20120809.pdf)]
- * 2011.11.09 **Abstract Interpretation** @CMU 15-414, Class Lecture
+ * 2011/11/09 **Abstract Interpretation** @CMU 15-414, Class Lecture
    [[Slides](./talks/20111109.pdf)]
- * 2011.10.10 **Model Checking** @CMU 15-414, Class Lecture
+ * 2011/10/10 **Model Checking** @CMU 15-414, Class Lecture
    [[Slides](./talks/20111010.pdf)]
- * 2011.03.23 **Basic Concepts of Abstract Interpretation** @CMU 15-817, Class Lecture
+ * 2011/03/23 **Basic Concepts of Abstract Interpretation** @CMU 15-817, Class Lecture
    [[Slides](./talks/20110323.pdf)]
- * 2011.01.26 **Data Flow Analysis** @CMU 15-817, Class Lecture
+ * 2011/01/26 **Data Flow Analysis** @CMU 15-817, Class Lecture
    [[Slides](./talks/20110126.pdf)]
- * 2010.01.18 **Deriving Invariants in Propositional Logic by Algorithmic Learning, Decision Procedures, and Predicate Abstraction** @[VMCAI 2010][VMCAI10], Madrid, Spain
+ * 2010/01/18 **Deriving Invariants in Propositional Logic by Algorithmic Learning, Decision Procedures, and Predicate Abstraction** @[VMCAI 2010][VMCAI10], Madrid, Spain
    [[Slides](./talks/20100118.pdf)/[photo](./talks/20100118.jpg)]
- * 2009.12.14 **Deriving Invariants in Propositional Logic by Algorithmic Learning, Decision Procedures, and Predicate Abstraction** @[APLAS 2009][APLAS09], Seoul, Korea (Poster Session)
+ * 2009/12/14 **Deriving Invariants in Propositional Logic by Algorithmic Learning, Decision Procedures, and Predicate Abstraction** @[APLAS 2009][APLAS09], Seoul, Korea (Poster Session)
    [[poster](./talks/20091214.pdf)/[photo](./talks/20091214_APLAS_poster.jpg)]
- * 2009.08.15 **PCC Framework for Program Generators** @[PCC 2009][PCC09], Los Angeles, U.S.A
+ * 2009/08/15 **PCC Framework for Program Generators** @[PCC 2009][PCC09], Los Angeles, U.S.A
    [[Slides](./talks/20090815.pdf)]
 
 [CAV18]: http://cavconference.org/2018
