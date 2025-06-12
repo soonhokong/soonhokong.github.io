@@ -9,16 +9,19 @@ xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-
 Soonho Kong
 ===========
 
-I'm a Principal Applied Scientist for [Amazon Web Services][AWS] working
-within the [Automated Reasoning Group][ARG].  My research focuses on
+I'm a Principal Applied Scientist for [Amazon Web Services][AWS]
+working within the Neuro-Symbolic AI Lab. My research focuses on
 designing and implementing AI systems with formal reasoning
-capabilities. In particular, I'm interested in combining LLMs with
-interactive and automated theorem proving techniques to achieve this
-goal.
+capabilities, particularly combining LLMs with interactive and
+automated theorem proving techniques. This work contributes to
+improving Amazon Nova models through advanced reasoning
+capabilities. I earned my PhD from [Carnegie Mellon University][CMU]
+under the supervision of [Professor Edmund Clarke][EMC], where my
+doctoral research focused on the design and implementation of
+delta-decision procedures. I received the [CADE Skolem Award][skolem]
+for "The Lean Theorem Prover (System Description)" paper, which
+introduced the [Lean theorem prover][lean].
 
-I earned my PhD from Carnegie Mellon University under the supervision
-of Professor Edmund Clarke. My doctoral research focused on the design
-and implementation of delta-decision procedures.
 
 ![email]  <a target="_blank" href="https://mailhide.io/e/HHFX0LX2">email address</a>\
 ![github] [`github.com/soonhokong`](https://github.com/soonhokong)\
@@ -29,7 +32,8 @@ and implementation of delta-decision procedures.
 [CPS]: https://en.wikipedia.org/wiki/Cyber-physical_system
 [TRI]: https://www.tri.global
 [EMC]: https://en.wikipedia.org/wiki/Edmund_M._Clarke
-[CMU]: https://csd.cmu.edu
+[CMU]: https://www.cs.cmu.edu/
+[skolem]: https://cadeinc.org/Skolem-Award
 [email]: ./img/email.svg "email" width=25px height=25px style="vertical-align: middle;"
 [github]: ./img/github.svg "github" width=25px height=25px style="vertical-align: middle;"
 [cv]: ./img/cv.svg "cv" width=25px height=25px style="vertical-align: middle;"
