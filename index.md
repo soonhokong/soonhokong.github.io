@@ -16,8 +16,10 @@ capabilities, particularly combining LLMs with interactive and
 automated theorem proving techniques. My work helps improve Amazon
 Nova models with advanced reasoning capabilities. I earned my PhD from
 [Carnegie Mellon University][CMU] under [Prof. Edmund Clarke][EMC],
-focusing on delta-decision procedures. I received the [CADE Skolem Award][skolem]
-for my contributions to the [Lean theorem prover][lean].
+focusing on delta-decision procedures. 
+
+I received the [ACM SIGPLAN Programming Languages Software Award][sigplan-software] and 
+the [CADE Skolem Award][cade-skolem] for my contributions to the [Lean theorem prover][lean].
 
 ![email]  <a target="_blank" href="https://mailhide.io/e/HHFX0LX2">email address</a>\
 ![github] [`github.com/soonhokong`](https://github.com/soonhokong)\
@@ -29,7 +31,8 @@ for my contributions to the [Lean theorem prover][lean].
 [TRI]: https://www.tri.global
 [EMC]: https://en.wikipedia.org/wiki/Edmund_M._Clarke
 [CMU]: https://www.cs.cmu.edu/
-[skolem]: https://cadeinc.org/Skolem-Award
+[cade-skolem]: https://cadeinc.org/Skolem-Award
+[sigplan-software]: https://www.sigplan.org/Awards/Software/
 [email]: ./img/email.svg "email" width=25px height=25px style="vertical-align: middle;"
 [github]: ./img/github.svg "github" width=25px height=25px style="vertical-align: middle;"
 [cv]: ./img/cv.svg "cv" width=25px height=25px style="vertical-align: middle;"
@@ -44,7 +47,7 @@ Software
  
 [dreal4]: https://github.com/dreal/dreal4
 [drake]: https://drake.mit.edu
-[lean]: http://leanprover.github.io
+[lean]: http://lean-lang.org
 
 Publications
 ------------
@@ -69,6 +72,9 @@ Patents
 
 Talks
 -----
+ * 2025/06/20 **Lean into the future -- Self Verification, the Key to AI** @Samsung Research, Seoul, South Korea.
+ * 2025/06/20 **Lean into the future -- Self Verification, the Key to AI** @LG AI Research, Seoul, South Korea. 
+ * 2025/06/19 **AI+Lean: Neurosymbolic AI** @PLDI 2025, Seoul, South Korea.
  * 2025/06/02 **AI Challenges for Academia -- An Industry Perspective** @TILOS Industry Day 2025, UCSD, San Diego, CA.
  * 2024/12/19 **Lean into the Future -- New Horizons in Mathematics, Programming, and AI** @Seoul National University, Seoul, Korea.
  * 2024/12/17 **Lean into the Future -- New Horizons in Mathematics, Programming, and AI** @AI for Mathematics Workshop on Formalization, KIAS, Seoul, Korea.
