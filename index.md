@@ -72,9 +72,10 @@ Patents
 
 Talks
 -----
+ * 2025/07/03 **Lean into Verifiable Intelligence** @UpStage AI, Seoul, South Korea.
  * 2025/06/23 **Lean into Verifiable Intelligence** @Seoul National University, Seoul, South Korea.
- * 2025/06/20 **Lean into the future -- Self Verification, the Key to AI** @Samsung Research, Seoul, South Korea.
- * 2025/06/20 **Lean into the future -- Self Verification, the Key to AI** @LG AI Research, Seoul, South Korea. 
+ * 2025/06/20 **Lean into the Future -- Self Verification, the Key to AI** @Samsung Research, Seoul, South Korea.
+ * 2025/06/20 **Lean into the Future -- Self Verification, the Key to AI** @LG AI Research, Seoul, South Korea. 
  * 2025/06/19 **AI+Lean: Neurosymbolic AI** @PLDI 2025, Seoul, South Korea.
  * 2025/06/02 **AI Challenges for Academia -- An Industry Perspective** @TILOS Industry Day 2025, UCSD, San Diego, CA.
  * 2024/12/19 **Lean into the Future -- New Horizons in Mathematics, Programming, and AI** @Seoul National University, Seoul, Korea.
