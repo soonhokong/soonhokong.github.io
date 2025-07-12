@@ -1,7 +1,7 @@
 Title:   Soonho Kong | Amazon Web Services
 Author:  Soonho Kong
-Date:    6 Dec 2023
-Description: Senior Applied Scientist at Amazon Web Services
+Date:    11 July 2025
+Description: Principal Applied Scientist at Amazon Web Services
 Language: en
 CSS: css/tufte.min.css
 xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38178018-3"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-38178018-3');</script>
@@ -72,6 +72,7 @@ Patents
 
 Talks
 -----
+ * 2025/07/11 **Lean into Verifiable Intelligence** @LeanQC (Quantum Computing), University of Michigan, Ann Arbor, MI.
  * 2025/07/03 **Lean into Verifiable Intelligence** @UpStage AI, Seoul, South Korea.
  * 2025/06/23 **Lean into Verifiable Intelligence** @Seoul National University, Seoul, South Korea.
  * 2025/06/20 **Lean into the Future -- Self Verification, the Key to AI** @Samsung Research, Seoul, South Korea.
