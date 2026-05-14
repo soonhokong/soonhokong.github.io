@@ -12,6 +12,7 @@ publications.html: publications.bib dsgplain.bst
 	bibtex2html -noheader -nofooter -nodoc -nokeywords -noabstract -nokeys -dl -s dsgplain -linebreak publications.bib
 	html-minifier publications.html --collapse-whitespace --remove-comments -o publications.html
 	html-minifier publications_bib.html --collapse-whitespace --remove-comments -o publications_bib.html
+	perl -i -pe 's{ Project page: <a href="([^"]+)">[^<]+</a>\.(<br>\[&nbsp;[^\]]*?)&nbsp;\]}{$$2&nbsp;| <a href="$$1">project page</a>&nbsp;]}g' publications.html
 	rm -rf bib2html*
 
 patents.html: patents.bib dsgplain.bst

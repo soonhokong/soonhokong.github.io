@@ -1,7 +1,7 @@
 Title:   Soonho Kong | Amazon Web Services
 Author:  Soonho Kong
 Date:    11 July 2025
-Description: Principal Applied Scientist at Amazon Web Services
+Description: Principal Applied Scientist at Amazon Web Services, Velocity Labs (Agentic AI)
 Language: en
 CSS: css/tufte.min.css
 xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38178018-3"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-38178018-3');</script>
@@ -9,14 +9,15 @@ xhtml header: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-
 Soonho Kong
 ===========
 
-I'm a Principal Applied Scientist for [Amazon Web Services][AWS]
-working within the Neuro-Symbolic AI Lab. My research focuses on
-designing and implementing AI systems with formal reasoning
-capabilities, particularly combining LLMs with interactive and
-automated theorem proving techniques. My work helps improve Amazon
-Nova models with advanced reasoning capabilities. I earned my PhD from
+I'm a Principal Applied Scientist at [Amazon Web Services][AWS],
+working on Velocity Labs within the Agentic AI organization.
+My research focuses on agentic coding, where trust is the bottleneck
+to unlocking real productivity gains. I pursue a neurosymbolic
+approach that combines AI with automated and interactive theorem
+proving, so that coding agents can ship faster while delivering code
+with machine-checked correctness guarantees. I earned my PhD from
 [Carnegie Mellon University][CMU] under [Prof. Edmund Clarke][EMC],
-focusing on delta-decision procedures. 
+focusing on delta-decision procedures.
 
 I received the [ACM SIGPLAN Programming Languages Software Award][sigplan-software] and 
 the [CADE Skolem Award][cade-skolem] for my contributions to the [Lean theorem prover][lean].
@@ -72,6 +73,7 @@ Patents
 
 Talks
 -----
+ * 2026/01/26 **Lean into Verifiable Intelligence** @[Workshop on Post-AI Formal Methods (P-AI-FM)][P-AI-FM], AAAI-26, Singapore.
  * 2025/07/11 **Lean into Verifiable Intelligence** @LeanQC (Quantum Computing), University of Michigan, Ann Arbor, MI.
  * 2025/07/03 **Lean into Verifiable Intelligence** @UpStage AI, Seoul, South Korea.
  * 2025/06/23 **Lean into Verifiable Intelligence** @Seoul National University, Seoul, South Korea.
@@ -120,6 +122,7 @@ Talks
  * 2009/08/15 **PCC Framework for Program Generators** @[PCC 2009][PCC09], Los Angeles, U.S.A
    [[Slides](./talks/20090815.pdf)]
 
+[P-AI-FM]: https://www.p-ai-fm.com/
 [CAV18]: http://cavconference.org/2018
 [FOMA18]: https://www.andrew.cmu.edu/user/avigad/meetings/foma_workshop
 [TACAS15]: https://www.etaps.org/2015/tacas
@@ -131,6 +134,11 @@ Talks
 
 Professional Activities
 -----------------------
+
+Workshop organizer
+ - [AI for Math 2026](https://ai4math2026.github.io/): 3rd AI for Math Workshop: Toward Self-Evolving Scientific Agents @ICML 2026
+ - [MATH-AI 2025](https://mathai2025.github.io/): The 5th Workshop on Mathematical Reasoning and AI @NeurIPS 2025
+ - [AI for Math 2025](https://sites.google.com/view/ai4mathworkshopicml2025/home): 2nd AI for Math Workshop @ICML 2025
 
 Program committee member
  - [MEMOCODE 2021](https://lcs.ios.ac.cn/memocode21): 19th ACM-IEEE International Conference on Formal Methods and Models for System Design
