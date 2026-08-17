@@ -73,6 +73,7 @@ Patents
 
 Talks
 -----
+ * 2026/07/13 **Lean into Verifiable Coding** @Seoul National University Graduate School of Data Science, Seoul, South Korea.
  * 2026/01/26 **Lean into Verifiable Intelligence** @[Workshop on Post-AI Formal Methods (P-AI-FM)][P-AI-FM], AAAI-26, Singapore.
  * 2025/07/11 **Lean into Verifiable Intelligence** @LeanQC (Quantum Computing), University of Michigan, Ann Arbor, MI.
  * 2025/07/03 **Lean into Verifiable Intelligence** @UpStage AI, Seoul, South Korea.
