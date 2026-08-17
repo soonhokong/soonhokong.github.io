@@ -25,7 +25,7 @@ css/tufte.min.css: css/tufte.css
 	uglifycss $^ > $@
 
 build/cv.pdf: cv.tex publications.bib
-	latexmk -pdf -xelatex cv
+	latexmk -pdf -xelatex -outdir=build cv
 
 cv.pdf: build/cv.pdf
 	cp build/cv.pdf cv.pdf

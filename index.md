@@ -136,6 +136,7 @@ Professional Activities
 -----------------------
 
 Workshop organizer
+ - [VeriCodeGen 2026](https://vericodegen.github.io/): AI for Verifiable Coding @NeurIPS 2026
  - [AI for Math 2026](https://ai4math2026.github.io/): 3rd AI for Math Workshop: Toward Self-Evolving Scientific Agents @ICML 2026
  - [MATH-AI 2025](https://mathai2025.github.io/): The 5th Workshop on Mathematical Reasoning and AI @NeurIPS 2025
  - [AI for Math 2025](https://sites.google.com/view/ai4mathworkshopicml2025/home): 2nd AI for Math Workshop @ICML 2025
