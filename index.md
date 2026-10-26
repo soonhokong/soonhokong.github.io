@@ -20,7 +20,7 @@ with machine-checked correctness guarantees. I earned my PhD from
 focusing on delta-decision procedures.
 
 I received the [ACM SIGPLAN Programming Languages Software Award][sigplan-software] and 
-the [CADE Skolem Award][cade-skolem] for my contributions to the [Lean theorem prover][lean].
+the [CADE Skolem Award][cade-skolem] for my contributions to the [Lean programming language and proof assistant][lean].
 
 ![email]  <a target="_blank" href="https://mailhide.io/e/HHFX0LX2">email address</a>\
 ![github] [`github.com/soonhokong`](https://github.com/soonhokong)\
